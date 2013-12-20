@@ -1,0 +1,934 @@
+﻿
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background:#c0c0c2; 
+    cursor: default;
+    font-size: 1em;
+    font-family: helvetica, verdana, Arial, sans-serif;
+}
+
+/*overlay*/
+.overlay{
+	background-color: #ffffff;
+	opacity: 0.2;
+	z-index: -1;
+	width: 100%;
+	height: 500px;
+	margin: 0 auto;
+	position: fixed;
+	
+}
+
+/*top links buttons*/
+#links-top{
+	margin: 0 auto;
+	width: 800px;
+	height: auto;
+	background-color: #fff;
+	padding: 0px;
+}
+
+/*Questions div area*/
+#questions-div{
+	width: 675px;
+	height: 225px;
+	position: absolute;
+	top: 325px;
+	left: 10px;
+	border: thin solid #000;
+}
+
+/*medical pics divs*/
+
+/*JOGGING DIV*/
+#a-wrap{
+	width: 700px;
+	height: 550px;
+	border: none;
+	padding: 0px; 
+}
+
+#a-wrap2{
+	width: 800px;
+	height: 550px;
+	border: none;
+	padding: 0px;
+	
+}
+
+.bodyPosition{
+	float: left;
+	width: 175px;
+	height: auto;
+}
+
+
+
+#bp{
+	position: absolute;
+	top: 0px;
+	left: 300px;
+	width: 380px;
+	height: 316px;
+	/*border: thin solid #000;*/
+}
+
+#pulse-bodyPosition{
+	float:right;
+	width: 779px;
+}
+
+/*#counting{
+	position:absolute;
+	top: 20px;
+	left: 450px;
+	width: 200px;
+	height: 150px;
+	color: #fff;
+	font-size: 9em;
+	border: thin dotted #000;
+	z-index: 2;
+	text-align:center;
+	background-color: #900;
+}*/
+
+#counting{
+	position:absolute;
+	top: 1px;
+	left: 435px;
+	width: 250px;
+	height: 190px;
+	border: thin solid #000;
+	z-index: 2;
+	background-color: #ececec;
+}
+
+#counting { 
+	text-align: center;
+	font-size: 1.1em;
+	color: #900;
+}
+
+#counting ol li{
+	color: #202054;
+	font-size: 0.75em;
+	z-index: 3;
+	text-align: left;
+	padding: 3px;
+}
+
+
+#beats{
+	position:absolute;
+	top: 175px;
+	left: 455px;
+	width: 190px;
+	height: 30px;
+	color: #900;
+	font-size: 24px;
+	border: thin solid #000;
+	z-index: 2;
+	text-align:center;
+	background-color: #ffffff;
+	z-index: 3;
+}
+
+
+#watch-jog{
+	
+}
+
+#regular-jog{
+	position: absolute;
+	top: 185px;
+	left: 15px;
+	width: 40px;
+	height: 39px;
+	z-index: 2;
+}
+
+#squeeze-jog{
+	position: absolute;
+	top: 185px;
+	left: 15px;
+	width: 40px;
+	height: 39px;
+	z-index: 1;
+}
+
+/*#needle-jog{
+	position: absolute;
+	top: 45px;
+	left: 265px;
+	width: 18px;
+	height: 121px;
+	z-index: 1;
+	
+}*/
+
+/*#needlebox{
+	position: absolute;
+	top: -51px;
+	left: 127px;
+	width: 18px;
+	height: 121px;
+	z-index: 1;
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	-webkit-transform:rotate(180deg);
+}*/
+
+#needlebox{
+	position: absolute;
+	top: 162px;
+	left: 382px;
+	width: 18px;
+	height: 121px;
+	z-index: 1;
+	transform:rotate(200deg);
+	-ms-transform:rotate(200deg); /* IE 9 */
+	-webkit-transform:rotate(200deg); /* Safari and Chrome */
+}
+
+#air{ 
+	width: 11px;
+	height: 12px;
+	position: absolute;
+	top: 221px;
+	left: 41px;
+	z-index: 3;
+	-moz-transform: rotate(16deg);
+	-webkit-transform: rotate(16deg);
+	transform: rotate(16deg);
+	
+}
+
+.needle150{
+	transform: rotate(-150deg);
+	-moz-transform: rotate(-150deg);
+	-webkit-transform:rotate(-150deg);
+	 transition-property: top, left;
+	transition-duration: 1s, 1s;
+	transition-delay: 0s, 1s;
+}
+
+#purple{
+	background-color: #202054;
+	width: 200px;
+	height: 50px;
+	opacity: 1;
+	z-index: 3;
+	position: absolute;
+	top: 20px;
+	left: 199px;
+	border: thin solid #000;
+}
+
+#unlv{
+	color:#900;
+}
+
+
+
+.needle{
+	transform:rotate(180deg); 
+	-moz-transform:rotate(180deg);
+	-webkit-transform:rotate(180deg);
+}
+#pulsebeat-jog{
+	position: relative;
+	top: 870px;
+	left: 680px;
+	width: 50px;
+	height: 50px;
+	z-index: 1;
+	background-color:#900;
+	border: thin solid #900;
+	border-radius: 30px;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+}
+
+.heartbeat-jog{
+	position: absolute;
+	top: 75px;
+	left: 100px;
+	z-index: 5;
+	width: 33px;
+	height: 32px; 
+	background-image:url(../images/heart.png);
+	background-repeat: none;
+}
+
+
+/*Pulse-jog*/
+#radial{
+	background-color: #fff;
+	/*border: thin solid #000;*/
+	position: absolute;
+	top: 10px;
+	left: 5px;
+	width: 680px;
+	height: 300px;
+	z-index: 4;
+}
+
+#watch-jogging{
+	background-color: none;
+	border: thin solid #000;
+	width: 680px;
+	height: 75px;
+	position: absolute;
+	top: 213px;
+	left: 4px;
+	z-index: 6;
+}
+
+#watch-jogging#watchgroup { 
+	 
+}
+
+#clockwords{
+	color:#202054; 
+	font-family: 'digital-7_italicitalic', Arial, sans-serif;
+	font-size: 3.6em; 
+	font-weight: bolder;
+	width: 425px;
+	height: 70px;
+	position: absolute;
+	top: 0px;
+	left: 88px; 
+	border: 0;
+}
+
+#watchbox{
+	width: 246px;
+	height: 50px;
+	/*border: thin solid #000;*/
+	position: absolute;
+	top: 9px;
+	left: 430px;
+}
+
+#start, #reset2{
+  width: 115px;
+  height: 45px;
+  background: #e0e0e0;
+  background-image: -webkit-linear-gradient(top, #e0e0e0, #c7c7c7);
+  background-image: -moz-linear-gradient(top, #e0e0e0, #c7c7c7);
+  background-image: -ms-linear-gradient(top, #e0e0e0, #c7c7c7);
+  background-image: -o-linear-gradient(top, #e0e0e0, #c7c7c7);
+  background-image: linear-gradient(to bottom, #e0e0e0, #c7c7c7);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-family: Arial;
+  color: #202054;
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  text-align: right center; 
+  display: inline-block;
+}
+
+
+
+#hand-jogging{
+	position: relative;
+	top: 10px;
+	left: 12px;
+	z-index: 5;
+	width: 600px;
+	height: 300px;
+}
+
+#heartbeat-jogging{
+	position: absolute;
+	top: 35px;
+	left: 235px;
+	z-index: 5;
+	border: thin solid #900;
+	background-color:#900;
+	border-radius: 35px;
+	-moz-border-radius: 35px;
+	-webkit-border-radius: 35px; 
+	width: 30px;
+	height: 30px;
+}
+
+/*background gray out during dialog*/
+.quiztitle{
+	color: #202054;
+}
+
+.header {
+	background-color: #ddd;
+	height: 40px;
+	width: auto;
+	padding: 0px;
+	margin: 0;
+	border: none;
+	
+}
+
+#bio{
+	float:left;
+	width: auto;
+	height:40px;
+	padding: 0px;
+	font-size: 36px;
+	font-weight:bold;
+	color: #202054;
+}
+
+/*#links{
+	width: 275px;
+	height: 30px;
+	float:right;
+	background-color: none;
+	border: thin solid #000;
+	
+	
+}
+
+#links ul{
+	list-style:none;
+	height: 50px;
+	margin:0;
+	padding:0;
+	
+}
+
+#links ul li{
+	display: inline;
+	;
+}
+
+#links ul a{
+	color:#202054;
+	text-decoration: none;
+	font-size: 20px;
+	padding: 2px;
+	float:right;
+}*/
+
+.header h2{
+	font-family: helvetica, verdana, Arial, sans-serif;
+	font-size: 2em;
+	color: #202054;
+	text-align: right;
+}
+
+/*main div for blood pressure*/
+#bloodPressure{
+	width: 700px;
+	height: 600px;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	background-color: #fff;
+	border: thin solid #202054;
+	padding: 0px;
+	-moz-box-shadow: #8b8b8d 4px 4px 4px;
+	-webkit-box-shadow: #8b8b8d 4px 4px 4px;
+	-o-box-shadow: #8b8b8d 4px 4px 4px;
+	box-shadow: #8b8b8d 4px 4px 4px;
+}
+
+#instructions1{
+	width: 575px;
+	height: 500px;
+	padding: 40px;
+}
+
+#instructions1 h2{
+	color:#202054;
+}
+
+#begin{
+	float: right; 
+	background-image:url(../images/begin.png);
+	width: 105px;
+	height: 31px;
+}
+
+#begin:hover{
+	background-image:url(../images/begin2.png);
+	width: 105px;
+	height: 31px;
+}
+
+/*bottom links buttons for awrap */
+#links-bottom{
+	width: 200px;
+	height: 36px;
+	border: none;
+	position: absolute;
+	top: 555px;
+	left: 490px;
+	/*border: thin solid #000;*/
+	
+	
+}
+
+#links-bottom img{
+	padding-right: 8px;
+	float: right;
+	border: 0;
+}
+
+#bottomtable{
+	width: 700px;
+	height: 47px;
+	padding: 0px;
+}
+
+#bottomtable tr td{
+	padding: 0px;
+	
+}
+
+#bottomtable tr td input{
+	width: 100px;
+}
+
+
+
+#bottom-buttons{
+	float: right;
+	width: 125px;
+	height: 30px;
+	padding: 2px;
+}
+
+
+#mainwhite{
+	
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	background-color: #ffffff;
+}
+/*questions*/
+#main{
+	width: auto;
+	height: auto;
+	
+}
+
+#content{
+
+	width: 600px;
+	height: 250px;
+
+}
+
+#turn{
+	padding:0px;
+	width: 200px;
+}
+
+ td a {
+	color: #000;
+	font-size: 1.5em;
+	padding-right: 5px;
+	padding-left: 5px;
+	text-decoration:none; 
+	border-right: thin solid #000;
+	
+	
+}
+
+/* #contactform {
+	color: #000;
+	font-size: 16px;
+	padding: 3px;
+	background-color: #fff;
+	display: block;
+	width: 200px;
+	height: auto;
+	text-decoration:none; 
+	border-right: thin solid #000;
+
+}
+*/
+ #email {
+	margin: 0 auto;
+	width: 300px;
+	height: auto;
+	
+}
+
+#helpfile{
+	width: 100%;
+	height: 300px;
+	background-color:#ddd;
+}
+
+#answertable{
+	border: thin solid #000;
+}
+
+/*wrapper div around table*/
+#maintable{
+	
+	margin: 20px auto;
+	width:1024px;
+	height: auto;
+	border:thin solid #000000;
+	
+}
+
+#hider{
+	display:none;
+}
+
+/*load scores at end*/
+#scored{
+	margin: 0 auto;
+	width: 200px;
+	height: 135px;
+	border:none;
+	color: #202054;
+	
+}
+
+#clickme a{
+	color: #fff;
+}
+
+#title{
+	color:#ffffff;
+}
+
+.codes {
+	font-weight: bold;
+	font-size:18px;
+}
+
+.pic1 {
+	float: right;
+	padding-top: 15px;
+	padding-right: 1%;
+	padding-bottom: 10px;
+	border: 0px;
+}
+ 
+ /* 
+.footer {
+	height: 221px;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	background-color: #C9C9C9;
+}
+*/
+
+img.bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+    
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+    
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 1024px){
+    img.bg {
+	left: 50%;
+	margin-left: -512px; }
+}
+
+/*Background of question*/
+#page-wrap { 
+    position: relative; 
+    width: 100%; 
+    height: 650px;
+    margin: 0px auto; 
+    padding: 5px;  
+	background-color: #c0c0c2;
+	background-repeat: repeat;
+}
+/*img
+{
+    border: 5px solid #fff;
+    margin: 10px;
+}*/
+.questionContainer {
+    width: auto;
+    padding: 3px;
+    margin-left:auto;
+    margin-right:3%;
+}
+.qnumber  {
+   font-size: 0.8em;
+   font-weight: normal;
+   margin: 10px;
+}
+.q  {
+   font-size: 1.2em;
+   font-weight: bold;
+   margin: 10px;
+   color: #202054;
+}
+
+ul {
+    margin: 0px;
+    padding: 5px;
+}
+ul li {
+    list-style: none;
+}
+a:hover {
+    background: none;
+}
+.btnRestart {
+    width: 96%;
+    margin: 10px 10px 10px 25px;
+    padding:20px 50px;
+    font-size: 15px;
+    padding: 4px;
+    font-weight: bold;
+    color: green;
+}
+.btnContainer {
+    width: 96%;
+    /*margin: 10px 0px 10px 2%;*/
+	margin-left: 15px;
+	margin-top:10px;
+	margin-bottom: 10px;
+}
+#progressKeeper {
+    width: 40%;
+    height: 5px;
+    border: 3px double #ffffff;
+    margin: 0px 10px;
+    margin-left: 30px;
+    padding: 3px;
+}
+.txtStatusBar {
+    width: 40%;
+    margin: 5px 10px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+#progress {
+    background: #aa1900;
+    width: 0;
+    height: 5px;
+}
+.radius {
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+#resultKeeper {
+    width: 670px;
+	height: 490px;
+    padding: 3px;
+	position: absolute;
+	top: 25px; 
+	left: 10px;
+	font-weight: bold;
+	background-color:#FFF;
+	border: thin solid #000; 
+	overflow: scroll;
+}
+#resultKeeper div {
+    line-height: 20px;
+}
+#totalScore {
+    font-weight: bold;
+	padding-botom: 50px;
+	font-size:18px;
+}
+input {
+    position: relative;
+
+}
+h1 {
+    /*border-bottom: 1px solid #ffffff;*/
+    font-weight: bold;
+    font-size: 1.7em;
+    height: 22px;
+    margin: 25px;
+    text-indent: 0px;
+}
+
+
+h2 {
+    font-size: .9em;
+    height: 22px;
+    margin: 10px;
+    text-indent: 5px;
+}
+label  {
+   font-size: 1em;
+   font-weight: normal;
+   margin: 10px;
+   position: bottom;
+}
+.prev {
+    float: left;
+	margin-right: 10px;
+    /*text-decoration: none; font: menu;
+    display: inline-block; padding: 2px 8px;
+    background: ButtonFace; color: ButtonText;
+    border-style: solid; border-width: 2px;
+    border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;
+	background-image:url(../image/PreviousBtn.png);
+	width: 74px;
+	height: 35px;*/
+}
+.next {
+    margin-left: 0px;
+    float: left;
+    /*text-decoration: none; font: menu;*/
+    /*display: inline-block; padding: 2px 8px;*/
+    /*background: ButtonFace; color: ButtonText;*/
+    /*border-style: solid; border-width: 2px;*/
+    /*border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;*/
+	/*background-image:url(../image/NextBtn.png);
+	width: 74px;
+	height: 35px;*/
+}
+
+.btnNext {
+border: 0px;
+margin: 0px;
+/*display: block;
+width: 74;
+height: 35;
+background-image:url(../images/NextBtn.png);
+background-repeat: none;*/
+}
+
+.btnNext img{
+	border: 0;
+}
+
+.btnNext:hover{
+/*background-image:url(../images/NextBtn2.png);*/
+
+}
+
+.btnShowResult img{
+	border: 0;
+}
+	
+
+.btnPrev {
+border: 0px;
+margin: 0px;
+}
+
+.btnPrev:hover img {
+background-color: #F2A93A
+/*background-image: url(../image/5.jpg)*/
+}
+
+
+.lastslide {
+    margin-left: 0px;
+    float: left;
+    /*text-decoration: none; font: menu;
+    display: inline-block; padding: 2px 8px;
+    background: ButtonFace; color: ButtonText;
+    border-style: solid; border-width: 2px;
+    border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;*/
+}
+
+.lastslide:hover img {
+
+}
+
+#restart {
+    width: 10%;
+    float: left;
+	margin-top: 10px;
+	margin-bottom: 0px;
+    /*color: green;
+    margin-left: 10px;
+    float: left;
+    text-decoration: none; font: menu;
+    display: inline-block; padding: 2px 8px;
+    background: ButtonFace; color: ButtonText;
+    border-style: solid; border-width: 2px;
+    border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;*/
+         }
+		 
+#restart:hover img {
+	background-color: #F2A93A
+}
+
+.clear { clear: both; }
+.hide { display: none; }
+.floatLeft {
+	width: 100%;
+	float:left;
+	margin:10px;
+	padding:5px;
+}
+
+#responsetext {
+	margin-left: 25px;
+}
+
+#totalScore {
+	margin-left: 25px;
+	margin-bottom: 10px;
+}
+
+/* TODO: added by speeves */
+#errormsg {
+    position: absolute;
+	top: 20px;
+	left: 200px;
+    color: #900;
+	width: 200px;
+	height: 50px;
+	text-align: left;
+	text-align-last:left;
+	z-index: 4;
+}
+.correct {
+    margin-left: 50px;
+    color: green;
+}
+.incorrect {
+    margin-left: 40px;
+    color: red;
+}
+
+.feedbackanswer {
+    /*font-style:italic;*/
+    margin-left: 0px;
+	color: #666;
+	font-variant:small-caps;
+	
+	}
+a.startlink{
+    text-decoration: none;
+    color: black;
+}
+#blockDiv {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+}
+.i {
+	font-style:italic;
+}

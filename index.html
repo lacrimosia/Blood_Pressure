@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+  <meta charset="utf-8" />
+  <head>
+    <title><span class="quiztitle"></span></title>
+    
+    <!-- load in digital 7 font for the display -->
+    <link rel="stylesheet" href="./css/stylesheet.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="./css/specimen_files/specimen_stylesheet.css" type="text/css" charset="utf-8" />
+    
+    
+    <link rel="Stylesheet" type="text/css" href="css/index.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>-->
+    <script src="js/raphael.js"></script>
+    <script src="js/buzz.js"></script>
+    <script src="js/stopwatch.js"></script>
+    <script src="js/jQueryRotate.js"></script>
+    <script type="text/javascript" src="js/documentready.js"></script>
+    <script type="text/javascript" src="js/jquery.eventreport.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/jwerty.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
+    <link rel="stylesheet" href="../css/index2.css"/>
+    <link rel="stylesheet" href="css/table.css"/>
+  </head>
+
+  <body>
+
+    <div id="trans"></div>
+    <div id="blockDiv" class="hide"></div>
+    <div class="header">
+      <!--Header Image Right-->
+      <div id="bio"><span id="unlv">UNLV</span> Bio 189 Lab - Blood Pressure and Radial Pulse </div>
+    </div>
+
+    <!--<img src="image/Header.jpg" class="bg">-->
+    <div id="mainwhite"><!--start main white div-->
+      <div id="page-wrap">
+        <div id="helpfile" class="hide"></div>
+
+        <!-- put our generated divs here -->
+        <!--start blood pressure main div-->
+        <div id="bloodPressure">
+
+
+	  
+          <div id="a-wrap"><!--all interactive stuff goes in here-->
+            <!-- final results -->
+            <div id="totalScore"></div>
+            <a class="btnRestart hide" href="#" id="restart" ><img src="images/try_again.png" alt="Try Again Button"/></a>
+            <div id="resultKeeper" class="hide"></div>
+            <!--- final results --->
+
+	    <div id="imagecontainer">
+              <div id="positionimages"><!--start jogging-->
+                <div id="instructions-bpjog"></div>
+    	        <div id="jogging" class="hide bodyPosition"><img src="images/jogging.jpg" id="jogging1"/><div id="heartbeat-jog"><img src="images/heart.png"/></div></div>
+                <div id="seated" class="hide bodyPosition"><img src="images/sitting.jpg" id="seated1"/><div id="heartbeat-sit"><img src="images/heart.png"/></div></div>
+                <div id="standing" class="hide bodyPosition"><img src="images/standing.jpg" id="standing1"/><div id="heartbeat-stand"><img src="images/heart.png"/></div></div>
+                <div id="post-jogging" class="hide bodyPosition"><img src="images/post-jogging.jpg" id="post1"/><div id="heartbeat-post"><img src="images/heart.png"/></div></div>
+                <div id="laying-down" class="hide bodyPosition"><div id="heartbeat-lay"><img src="images/laying-down.jpg" id="lay"/><img src="images/heart.png"/></div></div>
+              </div>
+              <!--- radial/bp images --->
+              <div id="spy">
+                <div id="bp" class="hide">
+                  <div id="cuff"><img src="images/background.jpg"></div>
+                  <div id="air"><img src="images/air.png"></div>
+                  <!--<div id="needle-jog" ><!--<img id="needle-image" src="images/needle-image.png" class="needle"></div>-->
+                  <div id="needlebox"><div id="rsr"></div></div>
+                  <div id="regular-jog"><img src="images/regular.png"></div>
+                  <div id="squeeze-jog"><img src="images/squeezed.png"></div> 
+                </div><!--end bp-->
+                
+                <!--hand and stopwatch-->
+                <div id="radial" class="hide"><!--Jogging pulse-->
+                  <div id="hand-jogging"><img src="images/hand.jpg"></div>
+                  <div id="counting">Instructions:<br>
+                  	<ol>
+                    	<li>Click to "Start/Pause" button to start and pause the stopwatch.</li>
+                        <li>To Clear time, click the "Reset" button.</li>
+                        <li>Count the number of beats to calculate the pulse for 15 seconds. <b>Answers are calculated in beats
+                        per minute.</b></li>
+                    </ol>
+                  </div>
+                  <!--<div id="beats">Beats in 15sec</div>-->
+                  
+                  <!--stopwatch-->
+                  <div id="watch-jogging">
+                    <form name="clockform" id="watchgroup">
+                    	<input name="clock" value="00:00:00.00" id="clockwords" readonly>
+                        	<div id="watchbox"> 
+                    			<input name="clearer" type="button" value="Reset" onclick="clearALL()" id="reset2">
+                    			<input name="starter" type="button" id="start" value="Start/Pause" onclick="findTIME()">
+                           </div>						
+                    </form>	
+                  </div>
+                  <!--end stopwatch-->
+              
+                  
+                  <div id="heartbeat-jogging"></div>
+        	</div><!--end radial-->
+              </div><!--spy-->   
+	    </div><!--end position images--> 
+            
+            <!--Purple firections popup-->
+            <div id="purple" class="hide">
+            </div>
+            <!--end purple-->
+            
+            <div id="instructions1"><!--start instructions-->
+              <h2>Instructions - Blood Pressure and Radial Pulse Activity</h2>
+	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere arcu ornare sollicitudin tincidunt. In pharetra 			et urna at consectetur. Nullam pharetra laoreet lectus, sit amet dictum dolor tincidunt et. Vivamus sodales feugiat nibh sed 				elementum. Pellentesque in porttitor eros, et ornare tellus. Cras metus felis, interdum non lobortis eget, feugiat sit amet odio. Nunc viverra sollicitudin turpis sit amet varius. Cras fringilla urna at nisi laoreet mattis. Etiam sed ipsum eget felis euismod pulvinar. In condimentum sapien arcu, feugiat viverra magna elementum at. Suspendisse id lacus sit amet neque euismod auctor.</p>
+              <p>
+                Mauris eu tellus nisi. Nulla eget massa vel est lobortis tempus ac eu arcu. Nulla a ante ultricies nisi consequat ullamcorper. Nunc sed mattis metus. In venenatis a mi vitae lacinia. Nunc eu fermentum libero. Pellentesque a lacus sed diam dignissim consectetur ut a urna. Nam eget consequat nulla, eget accumsan erat. </p>
+
+	      <p><div id="begin"></div></p>
+            </div><!--end instructions-->
+            
+            
+            <!--Where Questions will display-->
+            <div id="questions-div" class="hide">
+              <div id="main"><!--hidden until changes are made-->
+            	<div id="errormsg"></div>
+		<!--The Actual Questions--><div id="content"></div><!--end Content-->
+  	      </div><!--end main div-->
+            </div>
+            <!--End Questions div-->
+            
+            
+            
+            
+            <!-- <div id="instructions2" title="Taking Blood Pressure Instructions" class="hide"><\!--start instructions2-\-> -->
+	    <!--   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere arcu ornare sollicitudin tincidunt. In pharetra 			et urna at consectetur. Nullam pharetra laoreet lectus, sit amet dictum dolor tincidunt et. Vivamus sodales feugiat nibh sed 				elementum. Pellentesque in porttitor eros, et ornare tellus. Cras metus felis, interdum non lobortis eget, feugiat sit amet odio. Nunc viverra sollicitudin turpis sit amet varius. Cras fringilla urna at nisi laoreet mattis. Etiam sed ipsum eget felis euismod pulvinar. In condimentum sapien arcu, feugiat viverra magna elementum at. Suspendisse id lacus sit amet neque euismod auctor.</p> -->
+
+            </div><!--end instructions2-->  
+            
+            
+            <!--bottom links-->
+            <div id="links-bottom">
+    	      <div id="bottom-buttons"><a href="#" id="exit"><img src="images/exit.png"/></a> <a href="#" id="mute"><img src="images/mute-off.png"/></a></div>
+            </div> <!--end bottom links-->
+            
+            
+          </div>       
+        </div><!--end blood pressure main div-->
+
+        <!--- template div --->
+        <div id="question-template" class="hide">
+
+          <div class="questionContainer radius hide">
+            <!-- <div class="floatLeft"> -->
+            <!--   <img src="image/IMAGENAME"  alt="" /> -->
+            <!-- </div> -->
+            <div class="floatLeft">
+              <div class="question">
+                <span class="qnumber">Question QUESTIONNUM of TOTALQUESTIONS:</span>
+                <p class="q">QUESTION</p>
+              </div>
+              <div class="answers">
+                <ul>
+                  <div id="answercontent">ANSWERCONTENT</div>
+                </ul>
+              </div>
+              <div class="btnContainer">
+                <div class="prev hide"><a class="btnPrev" href="#"><img src="images/PreviousBtn.png" alt="Previous Button"/></a></div>
+                <div class="next hide"><a class="btnNext" href="#"><img src="images/NextBtn.png" alt="Next Button"/></a></div>
+                <div class="lastslide hide"><a class="btnShowResult" href="#"><img src="images/finish_btn.png" alt="Finish Button"/></a></div>
+                <br />
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div id="answer-template" class="hide">
+          <li>
+            <label>
+              <input type="QUESTIONTYPE" name="qQUESTIONNUM" id="qQUESTIONNUM-ANSWERLETTER">
+                ANSWERLETTER) ANSWERTEXT
+              </input>
+            </label>
+          </li>
+        </div>
+        <div id="correct-template" class="hide">
+          <span class="correct">ANSWERTEXT</span>
+        </div>
+        <div id="incorrect-template" class="hide">
+          <span class="incorrect"> &#x2717 <span class="answertext">ANSWERTEXT</span></span>
+        </div>
+        <div id="feedback-template" class="hide">
+          <span class="feedbackanswer">Correct answer: <span class="feedbackanswertext">ANSWERTEXT</span></span>
+        </div>
+        <!--- end template --->
+        <div id="questionlength" class="hide"></div>
+        <div id="quizanswers" class="radius hide"></div>
+      </div>
+    </div><!--end main white div-->
+  </body>
+</html>

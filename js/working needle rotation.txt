@@ -1,0 +1,57 @@
+HTML
+----
+
+<div id="rsr"></div>
+
+Javascript
+----------
+
+// create needle 
+var rsr = Raphael('rsr', 320, 240); 
+var needle = rsr.path("m 156.74443,870.84631 -2.26177,119.38851 4.38851,0 z");
+    needle.attr({id: 'needle',
+                 parent: 'layer1',
+                 fill: '#ff6600',
+                 stroke: '#000000',
+                 "stroke-width": '0.61',
+                 "stroke-linecap":'butt',
+                 "stroke-linejoin": 'miter',
+                 "stroke-miterlimit": '4',
+                 "stroke-opacity": '1',
+                 "stroke-dasharray": 'none'}); 
+
+//needle.rotate(0); 
+needle.transform("t0,-812.36218").data('id', 'needle'); 
+
+// get needle bounding box 
+var needleBox = needle.getBBox(); 
+
+// calculate rotation point (bottom middle)
+var x_rotate_point = needleBox.x + (needleBox.width/2); 
+var y_rotate_point = needleBox.y + needleBox.height; 
+
+// rotate needle
+needle./*attr({rotation: 0}).*/animate({transform: needle.attr("transform") + "R45,"+x_rotate_point+","+y_rotate_point}, 6000); 
+
+// Creates circle at rotation point 
+var circle = rsr.circle(x_rotate_point, y_rotate_point, 10); 
+circle.attr("fill", "#f00"); 
+circle.attr("stroke", "#fff");
+
+
+CSS for Font
+------------
+
+#length{
+    font-family: 'digital-7_italicitalic', Arial, sans-serif; 
+    font-size: 21px;
+}
+#units{
+    font-family: 'digital-7_italicitalic', Arial, sans-serif; 
+    font-size: 13px;
+}
+
+
+    <!-- load in digital 7 font for the display -->
+    <link rel="stylesheet" href="./css/stylesheet.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="./css/specimen_files/specimen_stylesheet.css" type="text/css" charset="utf-8" />

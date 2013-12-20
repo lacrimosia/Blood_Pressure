@@ -1,0 +1,22 @@
+Adding the answers to the table dynamically
+
+$(function(){
+			$('input[type=radio]').click(function(){
+				if ($('input[type="radio"]').is(':checked'))
+				{
+					
+					var items = $('input[type=radio]:checked:visible').attr("id");
+						$UserAnswers = $('#'+items).parent().text().trim();
+						var questions = $('.q:visible');
+						$tables = $('table tbody');
+						$UserQuestions = questions.text().trim();
+						var itemsArray = items.split('-');
+						console.log($UserQuestions);
+						
+						
+						if($('#tr_'+itemsArray[0]).length == 0){
+							var questions = $tables.append('<tr id="tr_'+itemsArray[0]+'"><td>'+$UserQuestions+'</td><td>'+$UserAnswers+'</td></tr>');
+						} else{
+							$('#tr_'+itemsArray[0]).html('<td>'+$UserQuestions+'</td><td>'+$UserAnswers+'</td>');
+							
+						}

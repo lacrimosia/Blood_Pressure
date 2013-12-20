@@ -1,0 +1,222 @@
+﻿/*
+Indigo - 141b56, r 20, g 27, b 86
+Seafoam green - 0fc7a4, r 15, g 199 b 164
+Orange - f26b0f, r 242m g 107 b 15
+*/
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background: #black; 
+    cursor: default;
+    font-size: 1em;
+    font-family: helvetica, verdana, Arial, sans-serif;
+    background-color: #141414;
+    background-image:url(../images/bkg_gradient960.jpg);
+    background-repeat:repeat-y;
+}
+
+  
+#footer {
+	height: 91px;
+	width: 960px;
+	padding: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0px;
+}  
+
+.clear { clear: both; }
+.hide { display: none; }
+.opaque { opacity: 0; }
+
+#content {
+    height: 600px;
+    width: 960px;
+}
+#bkgImage{ 
+	z-index: -1;
+    position: absolute;
+	top: 0;
+    left:0;
+}
+
+/*Main div for the floating elements*/
+#main{
+	background-color: none;
+	border: thin solid #141b56;
+	width: 798px;
+	height: 553px;
+	margin-top: 45px;
+	
+	
+}
+
+/*dragging*/
+#bp{
+	background-color: #999;
+	border: thin solid #09F;
+	width: 300px;
+	height: 300px;
+	border-radius: 10px;
+	border: thin solid #ffffff;
+}
+
+.bp2{
+	background-color:#93C;
+	border: thin solid #09F;
+	width: 300px;
+	height: 300px;
+	border-radius: 10px;
+}
+
+/*Area for changing picture*/
+#top_pic{
+	width: 797px;
+	margin-top: 0px;
+	height: 276px;
+	border: thin solid #ffffff;
+}
+
+/*Table*/
+#main_table{
+	width: 797px;
+	height: 274px;
+	border: thin solid #ffffff;
+	margin-top: 0px;
+	display:none;
+}
+
+/*table1*/
+#table1{
+	width: 100%;
+	height: 274px;
+	margin: 0 auto;
+}
+
+#table1 th{
+	width: 33%;
+	height: 15%;
+	border-right: thin solid #ffffff;
+	border-left: thin solif #ffffff;
+	background-color: #141b56;
+	color: #ffffff;
+	text-transform:uppercase; 
+	font-weight: bold;
+}
+
+#table1 td {
+	width: 33%;
+	height: 17%;
+	border: thin solid #ffffff;
+	text-align: center;
+	padding: 0px;
+	background-color: #ffffff;
+}
+
+#table1 tr{
+	border-bottom:none;
+}
+
+#table1 tr td:first-child{
+	background-color: #f26b0f;
+	opacity: 0.9;
+	color: #ffffff;
+	
+}
+#table1 tr td input{
+	width: 200px;
+	height: 20px;
+	background-color: none;
+	padding: 0px;
+	text-align: center;
+	border: none;
+	
+}
+
+input { 
+	size: 4; 
+	opacity: 1;
+        width: 160px;
+}
+
+div.rounded
+{
+    /*border: 1px solid #fff;*/
+    padding:20px ; 
+    /*background:#f26b0f;*/
+    /*border-radius:10px;*/
+}
+
+.myline {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-color: #f26b0f; 
+}
+
+#audio{
+	margin-top:200px;
+	background-color:#900;
+}
+
+/*Pulse dot*/
+#pulsedot{
+	position:relative;
+	top: 500px;
+	left: 340px;
+	background-image:url(../images/heart.png);
+	background-repeat:no-repeat;
+	width: 100px;
+	height: 94px;
+}
+
+/*questions*/
+#questions{
+	display:none;
+	width: 375px;
+	height: 300px;
+	background-color:#FFF;
+	border: thin solid #666;
+	box-shadow: 3px 3px 4px #333;
+	-moz-box-shadow: 3px 3px 4px #333;
+	-webkit-box-shadow: 3px 3px 4px #333;
+	position: absolute;
+	top: 75px;
+	left: 50px;
+	text-align: center;
+}
+
+/*fields*/
+#fields{
+	width: 200px;
+	height: 325px;
+	position: absolute;
+	top: 100px;
+	left: 500px;
+	background-color:#FFF;
+	color: #000;
+	text-align: center;
+	font-size: 16px;
+}
+
+#fields p{
+	font-weight: bold;
+}
+
+#submit {
+	padding-right: 3px;
+	position: relative;
+	top: 100px;
+	width: 60px;
+	text-align:center;
+	
+}
+
+#clear {
+	padding-right: 3px;
+	position: relative;
+	top: 100px;
+	width: 60px;
+	text-align:center;
+	
+}
