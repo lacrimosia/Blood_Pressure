@@ -7,6 +7,7 @@ var fadetime = 500;
 var totalquestions = 0;
 var Qquest = 0;
 var heartsound = new buzz.sound("audio/fast-heartbeat.mp3");
+var airSound = new buzz.sound("audio/air.wav");
 var positionType1 = data.questions[Qquest].positiontype;
 var pressureType1 = data.questions[Qquest].pressuretype;
 var speed = data.questions[Qquest].speed;
@@ -72,27 +73,6 @@ $(document).ready(function(){
         });
         $('#content').append(newdiv);
     });
-    //$('#thisis').replace(//, 'me');
-	
-	
-
-    
-    
-    //load pictures pertaining to each question
-    /*testing element*/
-    //HOW TO ACCESS JOGGING PICTURE FROM JSON
-    /*var questionOne = data.questions[0].positiontype1;
-      console.log(questionOne);
-      
-      
-      if(questionOne == "jogging"){
-      var joggingPicture = data.questions[0].imagepath;
-      
-      //$.each(data, function(key, val) {
-      $("#bodyPosition").append('<img src="' + joggingPicture + '" alt="jogging-picture" />');
-      //});
-      }*/
-    //end picture
     
     /*begin button*/
     $('#begin').click(function(){
@@ -118,36 +98,24 @@ console.log("begin button instruction", instructions);
     });
 	
 	$('#air').click(function(){
-		
+		$('#purple').text("Click Red button. Let out air");
 	    $('#air').hover(function(){
 		$('#air').css('cursor','pointer');
 	    });
-	    $('#air').css('cursor','pointer');
-            //console.log(needle);
-			
-	    	//needle.animate({transform: needle.attr("transform") + "R-205,"+x_rotate_point+","+y_rotate_point}, 16000, function(){
-	/*window.setInterval(function () {
-		needle.animate({transform: needle.attr("transform") + "R-205,"+x_rotate_point+","+y_rotate_point}, 16000, function(){
-			needle.transform("t0,-812.36218").data('id', 'needle');
-			
-			 });
-		console.log(needle.attr("transform").rotate);
-		
-    }, 1000);*/		
+	    $('#air').css('cursor','pointer');		
        needle.animate({transform: needle.attr("transform") + "R-205,"+x_rotate_point+","+y_rotate_point}, 16000, function(){
 		needle.transform("t0,-812.36218").data('id', 'needle');
 			}); 
-			    
-	   
+			   
 	    if(needle.matrix.split().rotate <= -1){
 		needle.stop;
 	    }
 	    
 	});
 	
-
+	$('#air').click(function(){
 	
-	
+	});
 	
 	function changeBorder(Qquest) {
 		//start heartbeats on click
@@ -155,55 +123,47 @@ console.log("begin button instruction", instructions);
 		var positionType1 = data.questions[Qquest].positiontype;
 		var pressureType1 = data.questions[Qquest].pressuretype;
 		var needleMove = needle.matrix.split().rotate;
-		
-		//console.log("position", positionType1);
-		//console.log("pressure", pressureType1);
-			
-				(function pulse(){
-        		$('#heartbeat-jog').delay(200).fadeOut('slow').delay(50).fadeIn('slow',pulse);
-    			})();
+			//console.log("needle animating", needleMove);
+		if (positionType1 == 'jogging' && pressureType1 == 'bp' ) {
+			var Joggers = setInterval(function(){
+				$("#heartbeat-jog").effect( "pulsate",
+          		{times:15}, 9000 );//times and how fast;
+			},3899);
 
-			
-			console.log("needle animating", needleMove);
-		if (positionType1 == 'jogging' && pressureType1 == 'bp' && needleMove == 92.27239586424439 ) {
-	
-		} 
-		
-		else if (positionType1 == 'jogging' && pressureType1 == 'radial') {
-			$("#heartbeat-jog").css("border", "3px solid green");
+			setTimeout(function(){
+				clearInterval(Joggers);
+				
+			},3900);
+				console.log(heartsound);
 		}
-		else if (positionType1 == 'seated' && pressureType1 == 'bp') {
+		if (positionType1 == 'seated' && pressureType1 == 'bp') {
 			$("#heartbeat-jog").css("border", "3px solid red");
 		}
-		else if (positionType1 == 'seated' && pressureType1 == 'radial') {
+		 if (positionType1 == 'seated' && pressureType1 == 'radial') {
 			$("#heartbeat-jog").css("border", "3px solid black");
 		}
-		else if (positionType1 == 'standing' && pressureType1 == 'bp') {
+		 if (positionType1 == 'standing' && pressureType1 == 'bp') {
 			$("#heartbeat-jog").css("border", "3px solid #BBBBBB");
 		}
-		else if (positionType1 == 'standing' && pressureType1 == 'radial') {
+		 if (positionType1 == 'standing' && pressureType1 == 'radial') {
 			$("#heartbeat-jog").css("border", "3px solid yellow");
 		}
-		else if (positionType1 == 'post-jogging' && pressureType1 == 'bp') {
+		 if (positionType1 == 'post-jogging' && pressureType1 == 'bp') {
 			$("#heartbeat-jog").css("border", "3px solid #BBBBBB");
 		}
-		else if (positionType1 == 'post-jogging' && pressureType1 == 'radial') {
+		 if (positionType1 == 'post-jogging' && pressureType1 == 'radial') {
 			$("#heartbeat-jog").css("border", "3px solid orange");
 		}
-		else if (positionType1 == 'laying-down' && pressureType1 == 'bp') {
+		 if (positionType1 == 'laying-down' && pressureType1 == 'bp') {
 			$("#heartbeat-jog").css("border", "3px solid white");
 		}
-		else if (positionType1 == 'laying-down' && pressureType1 == 'radial') {
+		 if (positionType1 == 'laying-down' && pressureType1 == 'radial') {
 			$("#heartbeat-jog").css("border", "3px solid brown");
 		}
 
 		}); //end the click of air
 	
 }
-
-
-
-
 
     // set our events
     $('.btnNext').click(function(){
@@ -277,28 +237,7 @@ console.log("begin button instruction", instructions);
 	location.reload();
 	return false;
     });
-    
-    
-    //default degrees before click
-    
-    
-    
-    // create needle 
-    /*var rsr = Raphael('rsr', 320, 240); //size of div rsr
-      var needle = rsr.path("m 156.74443,870.84631 -5.26177,88.38851 4.38851,0 z"); //size of needle
-      needle.attr({id: 'needle',
-      parent: 'layer1',
-      fill: '#202054',
-      stroke: '#000000',
-      "stroke-width": '0.61', //Stroke width
-      "stroke-linecap":'butt',
-      "stroke-linejoin": 'miter',
-      "stroke-miterlimit": '1',
-      "stroke-opacity": '1',
-      "transform": 'R-30',
-      "stroke-dasharray": 'none'
-      }); */
-    
+
     var rsr = Raphael('rsr', 320, 240); //size of div rsr
     var needle = rsr.path("m 156.74443,870.84631 -5.26177,88.38851 4.38851,0 z"); //size of needle
     needle.attr({id: 'needle',
@@ -313,10 +252,7 @@ console.log("begin button instruction", instructions);
 				 "transform": 'R-30',
                  "stroke-dasharray": 'none'
 		}); 
-    
-
-    //needle.rotate(0); 
-    //needle.transform("t0,-812.36218").data('id', 'needle'); 
+ 
     needle.transform("t0,-812.36218").data('id', 'needle');
     
     // get needle bounding box 
@@ -325,11 +261,6 @@ console.log("begin button instruction", instructions);
     // calculate rotation point (bottom middle)
     var x_rotate_point = needleBox.x + (needleBox.width/2); 
     var y_rotate_point = needleBox.y + (needleBox.height); 
-
-    // rotate needle
-    //needle./*attr({rotation: 0}).*/animate({transform: needle.attr("transform") + "R270,"+x_rotate_point+","+y_rotate_point}, 6000); 
-
-
 
     // Creates circle at rotation point 
     var circle = rsr.circle(x_rotate_point, y_rotate_point, 5); 
@@ -341,10 +272,7 @@ console.log("begin button instruction", instructions);
 
     /*click cuff and squeeze*/
     $('#regular-jog').click(function(){
-	/*Remove standard position class*/
-	//$('#needle-image').removeClass('needle');
-        //	needle./*attr({rotation: 0}).*/animate({transform: needle.attr("transform") + "R20,"+x_rotate_point+","+y_rotate_point}, 300);
-	//console.log(needle);
+		airSound.play();
         needle.animate({transform: needle.attr("transform") + "R20,"+x_rotate_point+","+y_rotate_point}, 300);
         /*get angle of each click*///console.log('Needle degree',needle.matrix.split().rotate);
 
@@ -358,64 +286,21 @@ console.log("begin button instruction", instructions);
 	/*stop needle at degree of 195 and higher*/
 	if(needle.matrix.split().rotate >= 195){
 	    needle.stop();
+		airSound.stop();
 	} 
 	// get the current question
 	//var iter = $('#content').find('.questionContainer:visible').index() + 1;
 	var iter = $('#content').find('.questionContainer:visible').index() + 1;
 	var positionType = data.questions[iter].positiontype; 
 	});
-	
-	//local rotation = math.floor(math.deg(math.atan2(v[3], v[4]))) % 360
-	changeBorder(Qquest);
-	//on each, change hearbeat speed and pulse speed and sounds 
-	/*Click Air button to let out the air*/
-	
 
-	
-	/*heartbeat starts at whatever degree
-	  /*var joggingHeart = $(function pulse(back) {
-    	  $('#heartbeat-jog').animate(
-          {
-          opacity: (back) ? 1 : 0.5
-          }, 500, function(){pulse(!back)});
-	  })(false);
-	  
-	  
-	  var seatedHeart = $(function pulse(back) {
-    	  $('#heartbeat-jog').animate(
-          {
-          opacity: (back) ? 1 : 0.5
-          }, 1200, function(){pulse(!back)});
-	  })(false);
-	  end heartbeat*/
+	changeBorder(Qquest);
 	
 	/*change cursor on hover*/
 	$('#regular-jog').hover(function(){
 	    $('#regular-jog').css('cursor','pointer');
 	});
-	
-        
-    
-    
-    
-
-
-    //on click of radio button alert user its value
-    /*$(function(){
-      $('input[type="radio"]').click(function(){
-      if ($(this).is(':checked'))
-      {
-      alert($(this).val());
-      }
-      });
-      });*/
-    
-    //On click of radio button, add user answer to the table
-    /*write answer value to table*/
-    /*This is how to access the answers*//*data.questions[itemsId].answers[answers].answertext;
-      data.questions[0].answers[1].answertext;*/
-    //Add user answer to table		
-    //images = data.questions[1];		
+		
     
     //Clear Table on click
     $('#clear2').click(function(){
@@ -423,24 +308,7 @@ console.log("begin button instruction", instructions);
 	$("html, body").animate({ scrollTop: 0 }, 600);
     	return false;
     });
-    
-    // $('.btnPrev').click(function(){
-    //     // block additional events with clear div
-    //     $("#blockDiv").removeClass('hide');
 
-    //     $(this).parents('.questionContainer').fadeOut(fadetime, function(){
-    //         $(this).prev().fadeIn(fadetime)
-    //     });
-    //     // remove our blocking div
-    //     setTimeout(function() {
-    //         $("#blockDiv").addClass('hide');
-    //     }, transitiontime-400);
-
-    //     $('#progress').width(($("#progress").width()/$("#progressKeeper").width()*100)-100/parseInt($("#questionlength").text())+'%');
-    //     $('.txtStatusBar').text('Status');
-    //     $('#resultKeeper').hide();
-    //     $('#progressKeeper').show();
-    // })
     $('.btnShowResult').click(function(){
         if ($('input[type=radio]:checked:visible').length == 0 && $('input[type=checkbox]:checked:visible').length == 0) {
             $('#errormsg').text('Please select an answer.').fadeIn().fadeOut(transitiontime);
