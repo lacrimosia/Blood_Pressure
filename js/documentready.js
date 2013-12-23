@@ -11,6 +11,7 @@ var airSound = new buzz.sound("audio/air.wav");
 var positionType1 = data.questions[Qquest].positiontype;
 var pressureType1 = data.questions[Qquest].pressuretype;
 var speed = data.questions[Qquest].speed;
+var delay = data.questions[Qquest].delay;
 
 
 $(document).ready(function(){
@@ -116,6 +117,9 @@ $(document).ready(function(){
 	
 	});
 	
+	
+	
+	
 	function changeBorder(Qquest) {
 		//start heartbeats on click
 		$('#air').click(function(){
@@ -135,6 +139,16 @@ $(document).ready(function(){
 				
 			},3902);
 				console.log(heartsound);
+		}
+		//Jogging Pulse
+		if (positionType1 == 'seated' && pressureType1 == 'radial') {
+			$('input#start').click(function(){
+				var seatedPulse = setInterval(function(){
+				$("#heartbeat-sit").effect( "pulsate",
+          		{times:2}, 5900 );//times and how fast;
+			},6900);
+			});
+			
 		}
 		//Seated BP
 		if (positionType1 == 'seated' && pressureType1 == 'bp') {
@@ -202,6 +216,8 @@ $(document).ready(function(){
 		}); //end the click of air
 	
 }
+
+
 
     // set our events
     $('.btnNext').click(function(){

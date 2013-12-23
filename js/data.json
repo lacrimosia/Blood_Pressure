@@ -49,6 +49,7 @@
 	  "pressuretype":"radial",
 	  "positiontype":"jogging", 
 	  "radialtype":"jogging",
+	  "delay": "100",
 	  "speed": "500",
           "answers":
           [
@@ -107,6 +108,7 @@
 	  "positiontype":"standing",
 	  "radialtype":"standing",
 	  "speed": "2000",
+	  "delay": "1000",
           "answers":
           [
               {
@@ -163,6 +165,7 @@
 	  "pressuretype":"radial",
 	  "positiontype":"seated",
 	  "speed": "6000",
+	  "delay": "1500",
           "answers":
           [
               {
@@ -219,6 +222,7 @@
 	  "pressuretype":"radial",
 	  "positiontype":"post-jogging",
 	  "speed": "1000",
+	  "delay": "500",
           "answers":
           [
               {
@@ -247,6 +251,7 @@
 	  "pressuretype":"bp",
 	  "positiontype":"laying-down",
 	  "speed": "10000",
+	  "delay": "6000",
           "answers":
           [
               {

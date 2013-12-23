@@ -1,7 +1,13 @@
 // stopwatch script by Brothercake - http://www.brothercake.com/ (format modified by Proft, 11 Sep 04)
-
+var jsonfile = 'js/data.json';
+var data = JSON.parse(getData(jsonfile));
 var base = 60;
+var Qquest = 0;
 var heartsound = new buzz.sound("audio/fast-heartbeat.mp3");
+var positionType1 = data.questions[Qquest].positiontype;
+var pressureType1 = data.questions[Qquest].pressuretype;
+var speed = data.questions[Qquest].speed;
+var delay = data.questions[Qquest].delay;
 var clocktimer,dateObj,dh,dm,ds,ms;
 var readout='';
 var h=1;
@@ -115,19 +121,19 @@ if (init==0) {
         	//}, i * 100);
     	//})(i);
 	//}
-	
-	
-	
-	/*heartbeat for the pulse scenario*/
+
+		/*heartbeat for the pulse scenario
 	(function jogging(back) {
     	$('#heartbeat-jogging').animate(
         	{
            		 opacity: (back) ? 1 : 0.5
-        	}, 100, function(){
+        	}, delay, function(){
 						jogging(!back)
 					});		
-		})(false);
-		/*end heartbeat*/
+		})(false);*/
+		
+	
+	
 		
 	} else {
 	if(show==true) {
@@ -136,7 +142,7 @@ if (init==0) {
 		//	clearTimeout(countNumber);
 		//}
 		heartsound.stop();
-		$('#heartbeat-jogging').stop();
+		//$('#heartbeat-jogging').stop();
 		show=false;
 		} else {
 		show=true;
@@ -153,3 +159,11 @@ if (init==0) {
 		heartsound.stop();
 		$('#mute img').append('<img src="images/mute"/>');
 	});
+
+function getData(jsonfile){
+    return $.ajax({
+        url:jsonfile,
+        async: false,
+        dataType: 'json'
+    }).responseText;
+}

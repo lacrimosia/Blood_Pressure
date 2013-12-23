@@ -65,7 +65,7 @@
                 <div id="laying-down" class="hide bodyPosition"><img src="images/laying-down.jpg" id="lay"/><div id="heartbeat-lay" class="heartbeat-laying2 hearts"><img src="images/heart.png"/></div></div>
               </div>
               <!--- radial/bp images --->
-              <div></div>
+              
               <div id="spy">
                 <div id="bp" class="hide">
                   <div id="cuff"><img src="images/background.jpg"></div>
@@ -92,7 +92,8 @@
                   <!--stopwatch-->
                   <div id="watch-jogging">
                     <form name="clockform" id="watchgroup">
-                    	<input name="clock" value="00:00:00.00" id="clockwords" readonly>
+                    	<h1><time id="clockwords">00:00:00</time></h1>
+                    	<!--<input name="clock" value="00:00:00.00" id="clockwords" readonly>-->
                         	<div id="watchbox"> 
                     			<input name="clearer" type="button" value="Reset" onclick="clearALL()" id="reset2">
                     			<input name="starter" type="button" id="start" value="Start/Pause" onclick="findTIME()">
