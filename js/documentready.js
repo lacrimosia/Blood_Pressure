@@ -176,7 +176,7 @@ $(document).ready(function(){
 
 			setTimeout(function(){
 				clearInterval(PostJ);
-				
+				//change
 			},6781);
 		}
 		 if (positionType1 == 'post-jogging' && pressureType1 == 'radial') {
