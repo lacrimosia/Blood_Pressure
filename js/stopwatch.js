@@ -1,13 +1,7 @@
 // stopwatch script by Brothercake - http://www.brothercake.com/ (format modified by Proft, 11 Sep 04)
-var jsonfile = 'js/data.json';
-var data = JSON.parse(getData(jsonfile));
+
 var base = 60;
-var Qquest = 0;
 var heartsound = new buzz.sound("audio/fast-heartbeat.mp3");
-var positionType1 = data.questions[Qquest].positiontype;
-var pressureType1 = data.questions[Qquest].pressuretype;
-var speed = data.questions[Qquest].speed;
-var delay = data.questions[Qquest].delay;
 var clocktimer,dateObj,dh,dm,ds,ms;
 var readout='';
 var h=1;
@@ -68,10 +62,8 @@ if (s>=(m*base)) {
 		//Stop timer at 15 seconds
 		if(ts == 16){
 			//startTIME().stop();
-	            console.log(heartsound);
 			heartsound.stop();
-			ts.stop();
-			jogging.stop();
+			//jogging.stop();
 
 			
 		}
@@ -112,29 +104,16 @@ if (init==0) {
 	startTIME();
 	init=1;
 	
-	//counting the number of heartbeats
-	//make it easier for the student to learn
-	//for (i=0;i <= 60;i++){
-    	//(function startCount(i) {
-        	//var countNumber = setTimeout(function(){
-            	//$("#counting").html(i);
-        	//}, i * 100);
-    	//})(i);
-	//}
-
-		/*heartbeat for the pulse scenario
-	(function jogging(back) {
-    	$('#heartbeat-jogging').animate(
+			/*(function jogging(back) {
+    		$('#heartbeat-jogging').animate(
         	{
            		 opacity: (back) ? 1 : 0.5
-        	}, delay, function(){
+        	}, 100, function(){
 						jogging(!back)
 					});		
-		})(false);*/
-		
+			})(false);
+			end heartbeat*/
 	
-	
-		
 	} else {
 	if(show==true) {
 		//$('#heartbeat-jogging').stop();
@@ -142,7 +121,6 @@ if (init==0) {
 		//	clearTimeout(countNumber);
 		//}
 		heartsound.stop();
-		//$('#heartbeat-jogging').stop();
 		show=false;
 		} else {
 		show=true;
@@ -159,11 +137,3 @@ if (init==0) {
 		heartsound.stop();
 		$('#mute img').append('<img src="images/mute"/>');
 	});
-
-function getData(jsonfile){
-    return $.ajax({
-        url:jsonfile,
-        async: false,
-        dataType: 'json'
-    }).responseText;
-}
