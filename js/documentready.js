@@ -36,7 +36,9 @@ function stopwatch(text) {
 if (sec<=9) { sec = "0" + sec; }
    document.clockform.stwa.value = ((hour<=9) ? "0"+hour : hour) + " : " + ((mins<=9) ? "0" + mins : mins) + " : " + sec;
 
-  if (text == "Start") { document.clockform.theButton.value = "Stop "; }
+	//change text on start button
+  if (text == "Start") { document.clockform.theButton.value = "Stop "; 
+  }
   if (text == "Stop ") { document.clockform.theButton.value = "Start"; }
 
   if (document.clockform.theButton.value == "Start") {
@@ -53,6 +55,7 @@ function resetIt() {
   mins = 0;
   hour = 0;
   if (document.clockform.theButton.value == "Stop ") {
+	$('#heartbeat=jogging').pulsate("destroy");	  
   document.clockform.theButton.value = "Start"; }
   window.clearTimeout(SD);
  }
@@ -166,37 +169,38 @@ $(document).ready(function(){
 
 	
 	//All Pulse
+		
 		$('#start').click(function(){
 			var positionType1 = data.questions[Qquest].positiontype;
 			var pressureType1 = data.questions[Qquest].pressuretype;
 			
 		if (positionType1 == 'jogging' && pressureType1 == 'radial') {
-			
-				$("#heartbeat-jogging").effect( "pulsate",
-          		{times:15}, 10000 );//times and how fast;	
-				alert("This is jogging");
+				$("#heartbeat-jogging").toggle().effect( "pulsate",
+          		{times:40}, 17000 );//times and how fast, second value determines duration	
+				 
+				//alert("This is jogging");
 		}
 		
 		 if (positionType1 == 'seated' && pressureType1 == 'radial') {
-				$("#heartbeat-jogging").effect( "pulsate",
-          		{times:20}, 5900 );//times and how fast;
-				alert("This is seated");
+				$("#heartbeat-jogging").toggle().effect( "pulsate",
+          		{times:10}, 12000 );//times and how fast;
+				//alert("This is seated");
 		}
 		 if (positionType1 == 'standing' && pressureType1 == 'radial') {
-				$("#heartbeat-post").effect( "pulsate",
-          		{times:23}, 4000 );//times per second;
-				alert("This is standing");
+				$("#heartbeat-post").toggle().effect( "pulsate",
+          		{times:12}, 14000 );//times per second;
+				//alert("This is standing");
 		}
 		 if (positionType1 == 'post-jogging' && pressureType1 == 'radial') {
-			$("#heartbeat-post").effect( "pulsate",
-          		{times:23}, 4000 );//times per second;
-				alert("This is post-jogging");
+			$("#heartbeat-post").toggle().effect( "pulsate",
+          		{times:40}, 14000 );//times per second;
+				//alert("This is post-jogging");
 		}
 		
 		if (positionType1 == 'laying-down' && pressureType1 == 'radial') {
-			$("#heartbeat-post").effect( "pulsate",
-          		{times:23}, 4000 );//times per second;
-				alert("This is laying down");
+			$("#heartbeat-post").toggle().effect( "pulsate",
+          		{times:7}, 14000 );//times per second;
+				//alert("This is laying down");
 		}
 			
 		
@@ -323,8 +327,7 @@ $(document).ready(function(){
 			
 			//reset needle to 0 deg every click
 			needle.transform("t0,-812.36218").data('id', 'needle');
-			
-			
+				
 			/*Purple instructions div*/
 	$('#purple').fadeIn('slow');
 	$('#purple').text("Click bulb up to 200");
