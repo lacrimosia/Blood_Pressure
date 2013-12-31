@@ -8,6 +8,7 @@ var totalquestions = 0;
 var Qquest = 0;
 var heartsound = new buzz.sound("audio/fast-heartbeat.mp3");
 var airSound = new buzz.sound("audio/air.wav");
+var release = new buzz.sound("audio/released.wav");
 var positionType1 = data.questions[Qquest].positiontype;
 var pressureType1 = data.questions[Qquest].pressuretype;
 var speed = data.questions[Qquest].speed;
@@ -159,7 +160,9 @@ $(document).ready(function(){
 			   
 	    if(needle.matrix.split().rotate <= -1){
 		needle.stop;
-	    }    
+	    }  
+		
+		release.play();  
 	});
 	
 	$('#air').click(function(){
