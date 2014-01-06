@@ -347,7 +347,20 @@ body{
 	 
 }
 
-#clockwords{
+#timers{
+	color:#202054; 
+	font-family: 'digital-7_italicitalic', Arial, sans-serif;
+	font-size: 3.3em; 
+	font-weight: bolder;
+	width: 425px;
+	height: 70px;
+	position: absolute;
+	top: 8px;
+	left: 30px; 
+	border: 0;
+}
+
+/*#clockwords{
 	color:#202054; 
 	font-family: 'digital-7_italicitalic', Arial, sans-serif;
 	font-size: 3.6em; 
@@ -359,18 +372,18 @@ body{
 	left: 88px; 
 	border: 0;
 }
-
+*/
 #watchbox{
-	width: 246px;
+	width: 346px;
 	height: 50px;
 	/*border: thin solid #000;*/
 	position: absolute;
-	top: 9px;
-	left: 430px;
+	top: 11px;
+	left: 388px;
 }
 
-#start, #reset2{
-  width: 115px;
+#sw_stop, #sw_start, #sw_pause, #sw_reset{
+  width: 65px;
   height: 45px;
   background: #e0e0e0;
   background-image: -webkit-linear-gradient(top, #e0e0e0, #c7c7c7);
@@ -378,9 +391,9 @@ body{
   background-image: -ms-linear-gradient(top, #e0e0e0, #c7c7c7);
   background-image: -o-linear-gradient(top, #e0e0e0, #c7c7c7);
   background-image: linear-gradient(to bottom, #e0e0e0, #c7c7c7);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
   font-family: Arial;
   color: #202054;
   font-size: 16px;
@@ -390,6 +403,26 @@ body{
   display: inline-block;
 }
 
+#sw_stop:hover, #sw_start:hover, #sw_pause:hover, #sw_reset:hover{
+  width: 65px;
+  height: 45px;
+  background: #e0e0e0;
+  background-image: -webkit-linear-gradient(top, #e0e0e0, #c7c7c7);
+  background-image: -moz-linear-gradient(top, #e0e0e0, #c7c7c7);
+  background-image: -ms-linear-gradient(top, #e0e0e0, #c7c7c7);
+  background-image: -o-linear-gradient(top, #e0e0e0, #c7c7c7);
+  background-image: linear-gradient(to bottom, #e0e0e0, #c7c7c7);
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  font-family: Arial;
+  color: #900;
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  text-align: right center; 
+  display: inline-block;
+}
 
 
 #hand-jogging{
@@ -415,6 +448,7 @@ body{
 	width: 30px;
 	height: 30px;
 }
+
 
 /*background gray out during dialog*/
 .quiztitle{

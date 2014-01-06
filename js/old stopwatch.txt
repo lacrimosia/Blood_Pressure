@@ -1,0 +1,51 @@
+function stopwatch(text) {
+	
+   sec++;
+  if (sec == 60) {
+   sec = 0;
+   mins = mins + 1; }
+  else {
+   mins = mins; }
+  if (mins == 60) {
+   mins = 0; 
+   hour += 1; }
+   
+
+
+if (sec<=9) { sec = "0" + sec; }
+   document.clockform.stwa.value = ((hour<=9) ? "0"+hour : hour) + " : " + ((mins<=9) ? "0" + mins : mins) + " : " + sec;
+
+	//change text on start button
+  if (text == "Start") { document.clockform.theButton.value = "Stop "; 
+  }
+  if (text == "Stop ") { document.clockform.theButton.value = "Start"; 
+
+  }
+
+$('#stop').click(function(){
+   window.clearTimeout(SD);
+   sec=sec-1;
+   return true; 
+	 SD=window.setTimeout("stopwatch();", 1000);
+});
+	/* if (document.clockform.theButton.value == "Start") {
+   window.clearTimeout(SD);
+   sec=sec-1;
+   return true; }
+	 SD=window.setTimeout("stopwatch();", 1000);*/
+}
+
+
+
+
+function resetIt() {
+	SD=window.setTimeout("stopwatch();", 1000);
+  sec = -1;
+  mins = 0;
+  hour = 0;
+  /*if (document.clockform.theButton.value == "Stop ") {  
+  document.clockform.theButton.value = "Start"; }*/
+  window.clearTimeout(SD);
+ }
+ 
+//end stopwatch

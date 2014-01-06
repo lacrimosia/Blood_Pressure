@@ -21,7 +21,6 @@
 	  "pressuretype":"bp",
 	  "positiontype":"jogging",
 	  "picturetype": "jogging",
-	  "speed": "400",
           "answers":
           [
               {
@@ -49,8 +48,8 @@
 	  "pressuretype":"radial",
 	  "positiontype":"jogging", 
 	  "radialtype":"jogging",
-	  "delay": "100",
-	  "speed": "500",
+	  "timing": "15",
+	  "duration": "17000",
           "answers":
           [
               {
@@ -107,8 +106,8 @@
 	  "pressuretype":"radial",
 	  "positiontype":"standing",
 	  "radialtype":"standing",
-	  "speed": "2000",
-	  "delay": "1000",
+	  "timing": "8",
+	  "duration": "19000",
           "answers":
           [
               {
@@ -164,8 +163,9 @@
           "answerkey":"d",
 	  "pressuretype":"radial",
 	  "positiontype":"seated",
-	  "speed": "6000",
-	  "delay": "1500",
+	  "radialtype":"seated",
+	  "timing": "11",
+	  "duration": "17000",
           "answers":
           [
               {
@@ -221,8 +221,9 @@
           "answerkey":"c",
 	  "pressuretype":"radial",
 	  "positiontype":"post-jogging",
-	  "speed": "1000",
-	  "delay": "500",
+	  "radialtype":"Post-Jogging",
+	 "timing": "15",
+	  "duration": "17000",
           "answers":
           [
               {
@@ -250,8 +251,6 @@
           "answerkey":"a",
 	  "pressuretype":"bp",
 	  "positiontype":"laying-down",
-	  "speed": "10000",
-	  "delay": "6000",
           "answers":
           [
               {
@@ -279,7 +278,9 @@
           "answerkey":"d",
 	  "pressuretype":"radial",
 	  "positiontype":"laying-down",
-	  "speed": "10000",
+	  "radialtype":"laying-down",
+	  "timing": "18",
+	  "duration": "19000",
           "answers":
           [
               {

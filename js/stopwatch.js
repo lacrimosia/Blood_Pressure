@@ -1,139 +1,235 @@
-// stopwatch script by Brothercake - http://www.brothercake.com/ (format modified by Proft, 11 Sep 04)
+/*
 
-var base = 60;
-var heartsound = new buzz.sound("audio/fast-heartbeat.mp3");
-var clocktimer,dateObj,dh,dm,ds,ms;
-var readout='';
-var h=1;
-var m=1;
-var tm=1;
-var s=0;
-var ts=0;
-var ms=0;
-var show=true;
-var init=0;
-var mPLUS=new Array(
-	'm0',
-	'm1',
-	'm2',
-	'm3',
-	'm4',
-	'm5',
-	'm6',
-	'm7',
-	'm8',
-	'm9'
-	);
-var ii=0;
+JQUERY: STOPWATCH & COUNTDOWN
 
-function clearALL() {
-	clearTimeout(clocktimer);
-	h=1;m=1;tm=1;s=0;ts=0;ms=0;
-	init=0;show=true;
-	readout='00:00:00.00';
-	document.clockform.clock.value=readout;
-	var CF = document.clockform;
-	for (ij=0;ij<=9;ij++) { CF[mPLUS[ij]].value = ''; }
-	ii = 0;
-	}
+This is a basic stopwatch & countdown plugin to run with jquery. Start timer, pause it, stop it or reset it. Same behaviour with the countdown besides you need to input the countdown value in seconds first. At the end of the countdown a callback function is invoked.
 
-function addMEM() {
-if (init>0) {
-		var CF = document.clockform;
-		CF[mPLUS[ii]].value = readout;
-		if (ii==9) { ii = 0; } else { ii++; }
-		}
-	}
+Any questions, suggestions? marc.fuehnen(at)gmail.com
 
+*/
 
-function startTIME() {
+$(document).ready(function() {
 
-var cdateObj = new Date();
-var t = (cdateObj.getTime() - dateObj.getTime())-(s*1000);
+    (function($){
+    
+        $.extend({
+            
+            APP : {                
+                
+                formatTimer : function(a) {
+                    if (a < 10) {
+                        a = '0' + a;
+                    }                              
+                    return a;
+                },    
+                
+                startTimer : function(dir) {
+                    
+                    var a;
+                    
+                    // save type
+                    $.APP.dir = dir;
+                    
+                    // get current date
+                    $.APP.d1 = new Date();
+                    
+                    switch($.APP.state) {
+                            
+                        case 'pause' :
+                            
+                            // resume timer
+                            // get current timestamp (for calculations) and
+                            // substract time difference between pause and now
+                            $.APP.t1 = $.APP.d1.getTime() - $.APP.td;                            
+                            
+                        break;
+                            
+                        default :
+                            
+                            // get current timestamp (for calculations)
+                            $.APP.t1 = $.APP.d1.getTime(); 
+                            
+                            // if countdown add ms based on seconds in textfield
+                            if ($.APP.dir === 'cd') {
+                                $.APP.t1 += parseInt($('#cd_seconds').val())*1000;
+                            }    
+                        
+                        break;
+                            
+                    }                                   
+                    
+                    // reset state
+                    $.APP.state = 'alive';   
+                    $('#' + $.APP.dir + '_status').html('Running');
+                    
+                    // start loop
+                    $.APP.loopTimer();
+                    
+                },
+                
+                pauseTimer : function() {
+                    
+                    // save timestamp of pause
+                    $.APP.dp = new Date();
+                    $.APP.tp = $.APP.dp.getTime();
+                    
+                    // save elapsed time (until pause)
+                    $.APP.td = $.APP.tp - $.APP.t1;
+                    
+                    // change button value
+                    $('#' + $.APP.dir + '_start').val('Resume');
+                    
+                    // set state
+                    $.APP.state = 'pause';
+                    $('#' + $.APP.dir + '_status').html('Paused');
+                    
+                },
+                
+                stopTimer : function() {
+                    
+                    // change button value
+                    $('#' + $.APP.dir + '_start').val('Restart');                    
+                    
+                    // set state
+                    $.APP.state = 'stop';
+                    $('#' + $.APP.dir + '_status').html('Stopped');
+                    
+                },
+                
+                resetTimer : function() {
 
-if (t>999) { s++; }
+                    // reset display
+                    $('#' + $.APP.dir + '_ms,#' + $.APP.dir + '_s,#' + $.APP.dir + '_m,#' + $.APP.dir + '_h').html('00');                 
+                    
+                    // change button value
+                    $('#' + $.APP.dir + '_start').val('Start');                    
+                    
+                    // set state
+                    $.APP.state = 'reset';  
+                    $('#' + $.APP.dir + '_status').html('Reset & Idle again');
+                    
+                },
+                
+                endTimer : function(callback) {
+                   
+                    // change button value
+                    $('#' + $.APP.dir + '_start').val('Restart');
+                    
+                    // set state
+                    $.APP.state = 'end';
+                    
+                    // invoke callback
+                    if (typeof callback === 'function') {
+                        callback();
+                    }    
+                    
+                },    
+                
+                loopTimer : function() {
+                    
+                    var td;
+                    var d2,t2;
+                    
+                    var ms = 0;
+                    var s  = 0;
+                    var m  = 0;
+                    var h  = 0;
+                    
+                    if ($.APP.state === 'alive') {
+                                
+                        // get current date and convert it into 
+                        // timestamp for calculations
+                        d2 = new Date();
+                        t2 = d2.getTime();   
+                        
+                        // calculate time difference between
+                        // initial and current timestamp
+                        if ($.APP.dir === 'sw') {
+                            td = t2 - $.APP.t1;
+                        // reversed if countdown
+                        } else {
+                            td = $.APP.t1 - t2;
+                            if (td <= 0) {
+                                // if time difference is 0 end countdown
+                                $.APP.endTimer(function(){
+                                    $.APP.resetTimer();
+                                    $('#' + $.APP.dir + '_status').html('Ended & Reset');
+                                });
+                            }    
+                        }    
+                        
+                        // calculate milliseconds
+                        ms = td%1000;
+                        if (ms < 1) {
+                            ms = 0;
+                        } else {    
+                            // calculate seconds
+                            s = (td-ms)/1000;
+                            if (s < 1) {
+                                s = 0;
+                            } else {
+                                // calculate minutes   
+                                var m = (s-(s%60))/60;
+                                if (m < 1) {
+                                    m = 0;
+                                } else {
+                                    // calculate hours
+                                    var h = (m-(m%60))/60;
+                                    if (h < 1) {
+                                        h = 0;
+                                    }                             
+                                }    
+                            }
+                        }
+                      
+                        // substract elapsed minutes & hours
+                        ms = Math.round(ms/100);
+                        s  = s-(m*60);
+                        m  = m-(h*60);                                
+                        
+                        // update display
+                        $('#' + $.APP.dir + '_ms').html($.APP.formatTimer(ms));
+                        $('#' + $.APP.dir + '_s').html($.APP.formatTimer(s));
+                        $('#' + $.APP.dir + '_m').html($.APP.formatTimer(m));
+                        $('#' + $.APP.dir + '_h').html($.APP.formatTimer(h));
+                        
+                        // loop
+                        $.APP.t = setTimeout($.APP.loopTimer,1);
+                    
+                    } else {
+                    
+                        // kill loop
+                        clearTimeout($.APP.t);
+                        return true;
+                    
+                    }  
+                    
+                }
+                    
+            }    
+        
+        });
+          
+        $('#sw_start').click( function() {
+            $.APP.startTimer('sw');
+        });    
 
-if (s>=(m*base)) {
-	ts=0;
-	m++;
-	} else {
-	ts=parseInt((ms/100)+s);
-	if(ts>=base) { ts=ts-((m-1)*base); }
-		//Stop timer at 15 seconds
-		if(ts == 16){
-			//startTIME().stop();
-			heartsound.stop();
-			//jogging.stop();
-
-			
-		}
-
-		//end stop timer snippet
-	}
-
-if (m>(h*base)) {
-	tm=1;
-	h++;
-	} else {
-	tm=parseInt((ms/100)+m);
-	if(tm>=base) { tm=tm-((h-1)*base); }
-	}
-
-ms = Math.round(t/10);
-if (ms>99) {ms=0;}
-if (ms==0) {ms='00';}
-if (ms>0&&ms<=9) { ms = '0'+ms; }
-
-if (ts>0) { ds = ts; if (ts<10) { ds = '0'+ts; }} else { ds = '00'; }
-dm=tm-1;
-if (dm>0) { if (dm<10) { dm = '0'+dm; }} else { dm = '00'; }
-dh=h-1;
-if (dh>0) { if (dh<10) { dh = '0'+dh; }} else { dh = '00'; }
-
-readout = dh + ':' + dm + ':' + ds + '.' + ms;
-if (show==true) { document.clockform.clock.value = readout; }
-
-clocktimer = setTimeout("startTIME()",1);
-}
-
-function findTIME() {
-if (init==0) {
-	//play sound
-	heartsound.play();
-	dateObj = new Date();
-	startTIME();
-	init=1;
-	
-			/*(function jogging(back) {
-    		$('#heartbeat-jogging').animate(
-        	{
-           		 opacity: (back) ? 1 : 0.5
-        	}, 100, function(){
-						jogging(!back)
-					});		
-			})(false);
-			end heartbeat*/
-	
-	} else {
-	if(show==true) {
-		//$('#heartbeat-jogging').stop();
-		//function stopCount(){
-		//	clearTimeout(countNumber);
-		//}
-		heartsound.stop();
-		show=false;
-		} else {
-		show=true;
-		}
-	}
-	
-}
-
-
-
-	
-//mute button
-	$('#mute').click(function(){
-		heartsound.stop();
-		$('#mute img').append('<img src="images/mute"/>');
-	});
+        $('#cd_start').click(function() {
+            $.APP.startTimer('cd');
+        });           
+        
+        $('#sw_stop,#cd_stop').click(function() {
+            $.APP.stopTimer();
+        });
+        
+        $('#sw_reset,#cd_reset').click(function() {
+            $.APP.resetTimer();
+        });  
+        
+        $('#sw_pause,#cd_pause').click( function() {
+            $.APP.pauseTimer();
+        });                
+                
+    })(jQuery);
+        
+});

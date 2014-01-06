@@ -15,7 +15,7 @@
     <!--<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>-->
     <script src="js/raphael.js"></script>
     <script src="js/buzz.js"></script>
-    <!--<script src="js/stopwatch.js"></script>-->
+<script src="js/stopwatch.js"></script>
     <script src="js/jQueryRotate.js"></script>
     <script type="text/javascript" src="js/documentready.js"></script>
     <script type="text/javascript" src="js/jquery.eventreport.js"></script>
@@ -93,13 +93,29 @@
                   <div id="watch-jogging">
                     <form name="clockform" id="watchgroup">
                     	<!--<input name="clock" value="00:00:00.00" id="clockwords" readonly>-->
-                        <input type="text" name="stwa"  id="clockwords" readonly value="00 : 00 : 00">
+                        <!--<input type="text" name="stwa"  id="clockwords" readonly value="00 : 00 : 00">-->
+                        <div id="timers">
+                        <span id="sw_h">00</span>&nbsp;:
+    					<span id="sw_m">00</span>&nbsp;:
+    					<span id="sw_s">00</span>&nbsp;:
+    					<span id="sw_ms">00</span>
+                        </div>
+                        
                         	<div id="watchbox"> 
+                            
+                            <input type="button" value="Start" id="sw_start" />
+   							 <input type="button" value="Pause" id="sw_pause" />
+    						<input type="button" value="Stop"  id="sw_stop" />
+    						<input type="button" value="Reset" id="sw_reset" />
                     			<!--<input name="clearer" type="button" value="Reset" onclick="clearALL()" id="reset2">-->
                     			<!--<input name="starter" type="button" id="start" value="Start/Pause">-->
                                <!--	<input name="starter" type="button" id="start" value="Start/Pause" onclick="findTIME()">-->
-                               <input type="button" name="theButton" id="start" onClick="stopwatch(this.value);" value="Start" />
-       							<input type="button" value="Reset" id="reset2" onClick="resetIt();reset();" />
+                            <!--<input type="button" name="theButton" id="start" onClick="stopwatch(this.value);" value="Start" /><input type="button" name="stop" id="stop"  value="Stop" onClick="stopTheClock(this.value);"/>
+       							<input type="button" value="Clear" id="reset2" onClick="resetIt();reset();" />-->
+                                
+                              <!--  <input type="button" name="theButton" id="start" value="Start" onClick="doTimer()"/>
+                                <input type="button" name="stop" id="stop"  value="Stop" onClick="stopCount()"/>
+       							<input type="button" value="Clear" id="reset2" onClick="resetCount()"/>-->
                            </div>						
                     </form>	
                   </div>
@@ -107,6 +123,7 @@
               
                   
                   <div id="heartbeat-jogging"></div>
+                  
         	</div><!--end radial-->
               </div><!--spy-->   
 	    </div><!--end position images--> 
@@ -118,8 +135,11 @@
             
             <div id="instructions1"><!--start instructions-->
               <h2>Instructions - Blood Pressure and Radial Pulse Activity</h2>
-	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere arcu ornare sollicitudin tincidunt. In pharetra 			et urna at consectetur. Nullam pharetra laoreet lectus, sit amet dictum dolor tincidunt et. Vivamus sodales feugiat nibh sed 				elementum. Pellentesque in porttitor eros, et ornare tellus. Cras metus felis, interdum non lobortis eget, feugiat sit amet odio. Nunc viverra sollicitudin turpis sit amet varius. Cras fringilla urna at nisi laoreet mattis. Etiam sed ipsum eget felis euismod pulvinar. In condimentum sapien arcu, feugiat viverra magna elementum at. Suspendisse id lacus sit amet neque euismod auctor.</p>
+	      <p>Content Needed Here!</p>
               <p>
+                Mauris eu tellus nisi. Nulla eget massa vel est lobortis tempus ac eu arcu. Nulla a ante ultricies nisi consequat ullamcorper. Nunc sed mattis metus. In venenatis a mi vitae lacinia. Nunc eu fermentum libero. Pellentesque a lacus sed diam dignissim consectetur ut a urna. Nam eget consequat nulla, eget accumsan erat. </p>
+                <br>
+                <p>
                 Mauris eu tellus nisi. Nulla eget massa vel est lobortis tempus ac eu arcu. Nulla a ante ultricies nisi consequat ullamcorper. Nunc sed mattis metus. In venenatis a mi vitae lacinia. Nunc eu fermentum libero. Pellentesque a lacus sed diam dignissim consectetur ut a urna. Nam eget consequat nulla, eget accumsan erat. </p>
 
 	      <p><div id="begin"></div></p>
