@@ -120,45 +120,34 @@ $(document).ready(function(){
 
 	
 	//All Pulse		
+	function pulseCode(Times, Durations, Volume){
+		$("#heartbeat-jogging").effect( "pulsate",
+				{times:Times}, Durations );//times per second;
+				heartsound.setVolume(Volume);
+				heartsound.play();	
+	}
+	
 		$('#sw_start').click(function(){ 
 			var positionType1 = data.questions[Qquest].positiontype;
 			var pressureType1 = data.questions[Qquest].pressuretype;
 
 			if(positionType1 == 'jogging' && pressureType1 == 'radial'){
-				$("#heartbeat-jogging").effect( "pulsate",
-				{times:15}, 12000 );//times and how fast;
-				heartsound.setVolume(100);
-				heartsound.play();
+				pulseCode(15,12000,100);	
 			}
-	
+			
 		 if (positionType1 == 'seated' && pressureType1 == 'radial') {
-				$("#heartbeat-jogging").effect( "pulsate",
-				{times:10}, 12000 );//times and how fast;
-				heartsound.setVolume(100);
-				heartsound.play();
-
+				pulseCode(10,12000,100);
 		}
+		
 		 if (positionType1 == 'standing' && pressureType1 == 'radial') {
-				$("#heartbeat-jogging").effect( "pulsate",
-				{times:12}, 14000 );//times per second
-				heartsound.setVolume(100);
-				heartsound.play();
-
+				pulseCode(12,14000,100);
 		}
 		  if (positionType1 == 'post-jogging' && pressureType1 == 'radial') {
-			$("#heartbeat-jogging").effect( "pulsate",
-				{times:20}, 17000 );//times per second;
-				heartsound.setVolume(100);
-				heartsound.play();
-
+				pulseCode(20,17000,100);
 		}
 		
 		 if (positionType1 == 'laying-down' && pressureType1 == 'radial') {
-			$("#heartbeat-jogging").effect( "pulsate",
-				{times:15}, 17000 );//times per second
-				heartsound.setVolume(100);
-				heartsound.play();
-
+				pulseCode(15,17000,100);
 		}
 				
 		});
@@ -173,9 +162,23 @@ $(document).ready(function(){
 			$("#heartbeat-jogging").clearQueue().effect();
 			heartsound.stop();
 		});
-
 		//end pulse animation
-	
+		
+		//blood pressure animation 
+	function bloodPressure(Picture,x,Volume,fade, Times, Durations,ending, secondEnding){
+		x = setInterval(function(){
+				heartsound.setVolume(Volume);
+				heartsound.fadeOut(fade);
+				Picture.effect( "pulsate",
+				{times:Times},Durations );//times and how fast;
+				
+			},ending);
+			
+			setTimeout(function(){
+				clearInterval(x);
+			},secondEnding);
+			
+	}
 	
 	
 	function changeBorder(Qquest) {
@@ -187,88 +190,38 @@ $(document).ready(function(){
 			//console.log("needle animating", needleMove);
 		//Jogging BP	
 		if (positionType1 == 'jogging' && pressureType1 == 'bp' ) {
-			var Joggers = setInterval(function(){
-				heartsound.setVolume(100);
-				heartsound.fadeOut(6000);
-				$("#heartbeat-jog").effect( "pulsate",
-				{times:18},6000 );//times and how fast;
-				
-			},3899);
-			
-
-			setTimeout(function(){
-				clearInterval(Joggers);
-			},3902);
+			var JoggerPicture = $('#heartbeat-jog');
+			bloodPressure(JoggerPicture,"Joggers",100,6000,18,6000,3899,3902);
 		}
 		
 		//Seated BP
 		if (positionType1 == 'seated' && pressureType1 == 'bp') {
-			var Seated = setInterval(function(){
-				heartsound.setVolume(100);
-				heartsound.fadeOut(6900);
-				$("#heartbeat-sit").effect( "pulsate",
-				{times:2}, 5900 );//times and how fast;
-				
-			},6900);
-
-			setTimeout(function(){
-				clearInterval(Seated);
-				
-			},6901);
-				
+				var SeatedPicture = $('#heartbeat-sit');
+				bloodPressure(SeatedPicture,"Seated",100,6900,2,5900,6900,6901);
 		}
 		
 		//Standing BP
 			if (positionType1 == 'standing' && pressureType1 == 'bp') {
-			var Standing = setInterval(function(){
-				heartsound.setVolume(100);
-				heartsound.fadeOut(4000);
-				$("#heartbeat-stand").effect( "pulsate",
-				{times:2}, 4000 );//times and how fast;
-			},7500);
-
-			setTimeout(function(){
-				clearInterval(Standing);
-				
-			},7501);
+				var standingPictures = $('#heartbeat-stand');
+				bloodPressure(standingPictures,"Standing",100,4000,2,4000,7500,7501);
 			}
 
-		
-		
 		//Post-jogging BP
 		 if (positionType1 == 'post-jogging' && pressureType1 == 'bp') {
-			var PostJ = setInterval(function(){
-				heartsound.setVolume(100);
-				heartsound.fadeOut(5000);
-				$("#heartbeat-post").effect( "pulsate",
-				{times:4}, 4000 );//times per second;
-			},6780);
-
-			setTimeout(function(){
-				clearInterval(PostJ);
-				//change
-			},6781);
+			var postJoggingPic = $('#heartbeat-post');
+				bloodPressure(postJoggingPic,"PostJ",100,5000,4,4000,6780,6781);
 		}
 		
 		//Laying-down BP
 		 if (positionType1 == 'laying-down' && pressureType1 == 'bp') {
-			 var Down = setInterval(function(){
-				 heartsound.setVolume(100);
-				heartsound.fadeOut(4000);
-				$("#heartbeat-lay").effect( "pulsate",
-				{times:4}, 4000 );//times per second;
-			},6780);
-
-			setTimeout(function(){
-				clearInterval(Down);
-				
-			},6781);
+			var DownPic = $('#heartbeat-lay');
+			bloodPressure(DownPic,"Down",100,4000,4,4000,6780,6781);
 		}
 		 
 		}); //end the click of air
 	
 }
-
+//end of changeBorder Function
 
 
 	// set our events
@@ -397,7 +350,7 @@ $(document).ready(function(){
 	$('#regular-jog').css('cursor','pointer');
 
 	/*stop needle at degree of 195 and higher*/
-	console.log("needle", needle.matrix.split().rotate);
+	//console.log("needle", needle.matrix.split().rotate);
 	if(needle.matrix.split().rotate >= 190){
 		needle.stop();
 		airSound.stop();
