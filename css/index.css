@@ -396,10 +396,10 @@ body{
   border-radius: 7px;
   font-family: Arial;
   color: #202054;
-  font-size: 16px;
-  padding: 10px 20px 10px 20px;
+  font-size: 1em;
+  padding: 5px;
   text-decoration: none;
-  text-align: right center; 
+  text-align: center; 
   display: inline-block;
 }
 
@@ -417,10 +417,10 @@ body{
   border-radius: 7px;
   font-family: Arial;
   color: #900;
-  font-size: 16px;
-  padding: 10px 20px 10px 20px;
+  font-size: 1em;
+  padding: 5px;
   text-decoration: none;
-  text-align: right center; 
+  text-align: center; 
   display: inline-block;
 }
 
