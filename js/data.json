@@ -54,19 +54,19 @@
           [
               {
                   "answerletter":"a",
-                  "answertext":"110"
+                  "answertext":"128"
               },
               {
                   "answerletter":"b",
-                  "answertext":"62"
+                  "answertext":"92"
               },
 	      {
                   "answerletter":"c",
-                  "answertext":"70"
+                  "answertext":"80"
               },
 	      {
                   "answerletter":"d",
-                  "answertext":"100"
+                  "answertext":"110"
               }
           ]
       },
@@ -112,11 +112,11 @@
           [
               {
                   "answerletter":"a",
-                  "answertext":"82"
+                  "answertext":"88"
               },
               {
                   "answerletter":"b",
-                  "answertext":"72"
+                  "answertext":"52"
               },
 	      {
                   "answerletter":"c",
@@ -170,11 +170,11 @@
           [
               {
                   "answerletter":"a",
-                  "answertext":"82"
+                  "answertext":"70"
               },
               {
                   "answerletter":"b",
-                  "answertext":"89"
+                  "answertext":"69"
               },
 	      {
                   "answerletter":"c",
@@ -182,7 +182,7 @@
               },
 	      {
                   "answerletter":"d",
-                  "answertext":"70"
+                  "answertext":"84"
               }
           ]
       },
@@ -232,11 +232,11 @@
               },
               {
                   "answerletter":"b",
-                  "answertext":"80"
+                  "answertext":"70"
               },
 	      {
                   "answerletter":"c",
-                  "answertext":"87"
+                  "answertext":"108"
               },
 	      {
                   "answerletter":"d",
@@ -285,7 +285,7 @@
           [
               {
                   "answerletter":"a",
-                  "answertext":"50"
+                  "answertext":"100"
               },
               {
                   "answerletter":"b",
@@ -293,11 +293,11 @@
               },
 	      {
                   "answerletter":"c",
-                  "answertext":"80"
+                  "answertext":"78"
               },
 	      {
                   "answerletter":"d",
-                  "answertext":"62"
+                  "answertext":"84"
               }
           ]
       }

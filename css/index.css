@@ -457,7 +457,7 @@ body{
 
 .header {
 	background-color: #ddd;
-	height: 40px;
+	height: 20px;
 	width: auto;
 	padding: 0px;
 	margin: 0;
@@ -468,9 +468,9 @@ body{
 #bio{
 	float:left;
 	width: auto;
-	height:40px;
+	height:20px;
 	padding: 0px;
-	font-size: 36px;
+	font-size: 1.2em;
 	font-weight:bold;
 	color: #202054;
 }
@@ -516,7 +516,7 @@ body{
 /*main div for blood pressure*/
 #bloodPressure{
 	width: 700px;
-	height: 600px;
+	height: 565px;
 	position: absolute;
 	top: 5px;
 	left: 5px;
@@ -554,12 +554,12 @@ body{
 
 /*bottom links buttons for awrap */
 #links-bottom{
-	width: 200px;
-	height: 36px;
+	width: 100px;
+	height: 20px;
 	border: none;
 	position: absolute;
-	top: 555px;
-	left: 490px;
+	top: 0px;
+	left: 605px;
 	/*border: thin solid #000;*/
 	
 	
@@ -590,9 +590,9 @@ body{
 
 #bottom-buttons{
 	float: right;
-	width: 125px;
-	height: 30px;
-	padding: 2px;
+	width: 100px;
+	height: 20px;
+	/*padding: 2px;*/
 }
 
 

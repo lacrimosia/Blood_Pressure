@@ -140,23 +140,22 @@ $(document).ready(function(){
 			var pressureType1 = data.questions[Qquest].pressuretype;
 
 			if(positionType1 == 'jogging' && pressureType1 == 'radial'){
-				pulseCode(15,12000,100,2.5);
-	
+				pulseCode(125,59000,100,1.1);
 			}
 			
 		 if (positionType1 == 'seated' && pressureType1 == 'radial') {
-				pulseCode(10,12000,100,0.5);
+				pulseCode(83,59000,100,0.5);
 		}
 		
 		 if (positionType1 == 'standing' && pressureType1 == 'radial') {
-				pulseCode(12,14000,100,1);
+				pulseCode(84,59000,100,0.5);
 		}
 		  if (positionType1 == 'post-jogging' && pressureType1 == 'radial') {
-				pulseCode(20,17000,100,1);
+				pulseCode(107,59000,100,1);
 		}
 		
 		 if (positionType1 == 'laying-down' && pressureType1 == 'radial') {
-				pulseCode(15,17000,100,1);
+				pulseCode(85,59000,100,0.5);
 		}
 				
 		});
@@ -369,7 +368,7 @@ $('#mute').on({
 
 	/*click cuff and squeeze*/
 	$('#regular-jog').click(function(){
-		needle.animate({transform: needle.attr("transform") + "R20,"+x_rotate_point+","+y_rotate_point}, 600);
+		needle.animate({transform: needle.attr("transform") + "R40,"+x_rotate_point+","+y_rotate_point}, 600);
 		/*get angle of each click*///console.log('Needle degree',needle.matrix.split().rotate);
 
 	/*Fade out Bulb and fade In*/
@@ -383,7 +382,7 @@ $('#mute').on({
 
 	/*stop needle at degree of 195 and higher*/
 	//console.log("needle", needle.matrix.split().rotate);
-	if(needle.matrix.split().rotate >= 190){
+	if(needle.matrix.split().rotate >= 200){
 		needle.stop();
 		airSound.stop();
 		$('#purple').text("Click red button, let air out.");
