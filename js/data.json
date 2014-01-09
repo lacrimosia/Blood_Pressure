@@ -14,7 +14,7 @@
   "questions":
   [
       {
-          "question":"What is the blood pressure while Jogging?",
+          "question":"What is the blood pressure while jogging?",
           "instructions":"Click bulb to take blood pressure",
           "questiontype":"radio",
           "answerkey":"b",
@@ -42,7 +42,7 @@
           ]
       },
       {
-          "question":"What is the Pulse while Jogging?",
+          "question":"What is the Pulse while jogging?",
           "questiontype":"radio",
           "answerkey":"a",
 	  "pressuretype":"radial",
@@ -72,7 +72,7 @@
       },
       {
 	  
-	  "question":"What is the blood pressure while Standing?",
+	  "question":"What is the blood pressure while standing?",
           "questiontype":"radio",
           "answerkey":"d",
 	  "pressuretype":"bp",
@@ -100,7 +100,7 @@
       },
 	  {
 	  
-	  "question":"What is the Pulse while Standing?",
+	  "question":"What is the Pulse while standing?",
           "questiontype":"radio",
           "answerkey":"a",
 	  "pressuretype":"radial",
@@ -130,7 +130,7 @@
       },
 	  {
 	  
-	  "question":"What is the blood Pressure while Seated?",
+	  "question":"What is the blood pressure while seated?",
           "questiontype":"radio",
           "answerkey":"b",
 	  "pressuretype":"bp",
@@ -158,7 +158,7 @@
       },
 	  {
 	  
-	  "question":"What is the Pulse while Seated?",
+	  "question":"What is the pulse while seated?",
           "questiontype":"radio",
           "answerkey":"d",
 	  "pressuretype":"radial",
@@ -188,7 +188,7 @@
       },
 	  {
 	  
-	  "question":"What is the Blood Pressure Post-Jogging?",
+	  "question":"What is the blood pressure post-jogging?",
           "questiontype":"radio",
           "answerkey":"b",
 	  "pressuretype":"bp",
@@ -216,7 +216,7 @@
       },
 	  {
 	  
-	  "question":"What is the Pulse Post-Jogging?",
+	  "question":"What is the pulse post-jogging?",
           "questiontype":"radio",
           "answerkey":"c",
 	  "pressuretype":"radial",
@@ -246,7 +246,7 @@
       },
 	  {
 	  
-	  "question":"What is the Blood Pressure while laying down?",
+	  "question":"What is the blood pressure while laying down?",
           "questiontype":"radio",
           "answerkey":"a",
 	  "pressuretype":"bp",
@@ -273,7 +273,7 @@
       },
 	  {
 	  
-	  "question":"What is the Pulse while laying down?",
+	  "question":"What is the pulse while laying down?",
           "questiontype":"radio",
           "answerkey":"d",
 	  "pressuretype":"radial",

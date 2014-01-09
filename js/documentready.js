@@ -6,13 +6,20 @@ var transitiontime = 1000;
 var fadetime = 500;
 var totalquestions = 0;
 var Qquest = 0;
-var heartsound = new buzz.sound("audio/fast-heartbeat.mp3");
+var heartsound = new buzz.sound("audio/heart.mp3");
+/*var heartsound = new buzz.sound([
+    "/sounds/heart.mp3",
+    "/sounds/heart.ogg",
+    "/sounds/heart.wav"
+]);*/
 var airSound = new buzz.sound("audio/air.wav");
 var release = new buzz.sound("audio/released.wav");
 var positionType1 = data.questions[Qquest].positiontype;
 var pressureType1 = data.questions[Qquest].pressuretype;
 var Times = data.questions[Qquest].timing;
 var Duration = data.questions[Qquest].duration;
+var muteOff = $("#mu").attr("src", "images/mute-off.png");	
+var muteOn =  $("#mu").attr("src", "images/mute.png");
 
 
 
@@ -120,34 +127,36 @@ $(document).ready(function(){
 
 	
 	//All Pulse		
-	function pulseCode(Times, Durations, Volume){
+	function pulseCode(Times, Durations, Volume,fast){
 		$("#heartbeat-jogging").effect( "pulsate",
 				{times:Times}, Durations );//times per second;
 				heartsound.setVolume(Volume);
-				heartsound.play();	
+				heartsound.setSpeed(fast);
+				heartsound.loop().play();
+					
 	}
-	
 		$('#sw_start').click(function(){ 
 			var positionType1 = data.questions[Qquest].positiontype;
 			var pressureType1 = data.questions[Qquest].pressuretype;
 
 			if(positionType1 == 'jogging' && pressureType1 == 'radial'){
-				pulseCode(15,12000,100);	
+				pulseCode(15,12000,100,2.5);
+	
 			}
 			
 		 if (positionType1 == 'seated' && pressureType1 == 'radial') {
-				pulseCode(10,12000,100);
+				pulseCode(10,12000,100,0.5);
 		}
 		
 		 if (positionType1 == 'standing' && pressureType1 == 'radial') {
-				pulseCode(12,14000,100);
+				pulseCode(12,14000,100,1);
 		}
 		  if (positionType1 == 'post-jogging' && pressureType1 == 'radial') {
-				pulseCode(20,17000,100);
+				pulseCode(20,17000,100,1);
 		}
 		
 		 if (positionType1 == 'laying-down' && pressureType1 == 'radial') {
-				pulseCode(15,17000,100);
+				pulseCode(15,17000,100,1);
 		}
 				
 		});
@@ -295,6 +304,23 @@ $(document).ready(function(){
 	/*Exit/restart button*/
 	$('.btnRestart').click(function(){
 		location.reload();
+	});
+	
+	//Mute all sounds
+	function muteSound(){
+		heartsound.toggleMute();
+		airSound.toggleMute();
+		release.toggleMute();
+	}
+	
+	$('#mute').click(function(){
+		muteSound();
+
+	muteOff.toggle();
+		
+	
+		
+
 	});
 	
 	
