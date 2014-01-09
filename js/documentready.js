@@ -315,13 +315,19 @@ $(document).ready(function(){
 	
 	$('#mute').click(function(){
 		muteSound();
-
-	muteOff.toggle();
-		
-	
-		
-
 	});
+	
+	    //toggle mute image
+$('#mute').on({
+    'click': function () {
+        var origsrc = $('#mu').attr('src');
+        var src = '';
+        if (origsrc == 'images/mute.png') src = 'images/mute-off.png';
+        if (origsrc == 'images/mute-off.png') src = 'images/mute.png';
+        $('#mu').attr('src', src);
+		return false;
+    }
+});
 	
 	
 	$('#exit').click(function(){
