@@ -85,15 +85,11 @@
                 <!--hand and stopwatch-->
                 <div id="radial" class="hide"><!--Jogging pulse-->
                   <div id="hand-jogging"><img src="images/hand.jpg"></div>
-                  <div id="counting">Instructions:<br>
+                  <div id="counting"><span>Instructions</span><br><br>
                   	<ol>
-                    	<li>Click to <b>"Start/Pause"</b> button to start and pause the stopwatch.</li>
-                        
-                        <li>To Stop time, click the <b>"Stop"</b> button.</li>
-                        
+                    	<li>Click the <b>"Start/Pause"</b> button to start and pause the stopwatch.</li>
                         <li>To Clear time, click the <b>"Reset"</b> button.</li>
-                        <li>Count the number of heartbeats per second and calculate the beats for 15 seconds. At 15 seconds, press the "Stop" button. <br><br><b>Answers are calculated in beats
-                        per minute.</b></li>
+                        <li><b>Exercise can be repeated.</b></li>
                     </ol>
                   </div>
                   <!--<div id="beats">Beats in 15sec</div>-->
@@ -114,7 +110,7 @@
                             
                             <input type="button" value="Start" id="sw_start" />
    							 <input type="button" value="Pause" id="sw_pause" />
-    						<input type="button" value="Stop"  id="sw_stop" />
+    						<!--<input type="button" value="Stop"  id="sw_stop" />-->
     						<input type="button" value="Reset" id="sw_reset" />
                     			<!--<input name="clearer" type="button" value="Reset" onclick="clearALL()" id="reset2">-->
                     			<!--<input name="starter" type="button" id="start" value="Start/Pause">-->
@@ -143,9 +139,10 @@
             <!--end purple-->
             
             <div id="instructions1"><!--start instructions-->
-              <span><b>Blood Pressure and Radial Pulse Activity</b></span><br><br>
+              <span><b>Interactive Activity</b></span><br><br>
               <ol>
-                <li>For each scenario, you will take the blood pressure and pulse and select an answer. </li>
+                <li>For each scenario, you will take the blood pressure and pulse.</li>
+                <li>Then you will select an answer.</li>
              	<li>At the end of the activity, you will receive a score out of 100%.</li>
               </ol>
            
@@ -167,6 +164,10 @@
 
           </div>       
         </div><!--end blood pressure main div-->
+        
+        <!--OE logo-->
+        <div id="oe_logo"><a href="http://online.unlv.edu/"><img src="images/oelogo.jpg"></a></div>
+        <!--end logo-->
 
         <!--- template div --->
         <div id="question-template" class="hide">
@@ -187,8 +188,9 @@
               </div>
               <div class="btnContainer">
                 <div class="prev hide"><a class="btnPrev" href="#"><img src="images/PreviousBtn.png" alt="Previous Button"/></a></div>
-                <div class="next hide"><a class="btnNext" href="#"><img src="images/NextBtn.png" alt="Next Button"/></a></div>
-                <div class="lastslide hide"><a class="btnShowResult" href="#"><img src="images/finish_btn.png" alt="Finish Button"/></a></div>
+                <div class="next hide"><a class="btnNext" href="#"><img src="images/go.jpg" alt="Next Button"/></a></div>
+<!--                <div class="next hide"><a class="btnNext" href="#"><img src="images/NextBtn.png" alt="Next Button"/></a></div>-->
+                <div class="lastslide hide"><a class="btnShowResult" href="#"><img src="images/finish.jpg" alt="Finish Button"/></a></div>
                 <br />
               </div>
             </div>

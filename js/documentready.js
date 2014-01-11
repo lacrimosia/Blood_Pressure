@@ -103,7 +103,7 @@ $(document).ready(function(){
 	/*Purple instructions div*/
 	$('#purple').fadeIn('slow');
 	$('#purple').text("Click bulb up to 200");
-	$('#purple').css('color','#fff');
+	/*$('#purple').css('color','#fff');*/
 	$('#purple').css('padding','5px');
 	return false;
 	});

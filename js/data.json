@@ -54,19 +54,19 @@
           [
               {
                   "answerletter":"a",
-                  "answertext":"128"
+                  "answertext":"128 bpm"
               },
               {
                   "answerletter":"b",
-                  "answertext":"92"
+                  "answertext":"92 bpm"
               },
 	      {
                   "answerletter":"c",
-                  "answertext":"80"
+                  "answertext":"80 bpm"
               },
 	      {
                   "answerletter":"d",
-                  "answertext":"110"
+                  "answertext":"110 bpm"
               }
           ]
       },
@@ -112,19 +112,19 @@
           [
               {
                   "answerletter":"a",
-                  "answertext":"88"
+                  "answertext":"88 bpm"
               },
               {
                   "answerletter":"b",
-                  "answertext":"52"
+                  "answertext":"52 bpm"
               },
 	      {
                   "answerletter":"c",
-                  "answertext":"99"
+                  "answertext":"99 bpm"
               },
 	      {
                   "answerletter":"d",
-                  "answertext":"60"
+                  "answertext":"60 bpm"
               }
           ]
       },
@@ -170,19 +170,19 @@
           [
               {
                   "answerletter":"a",
-                  "answertext":"70"
+                  "answertext":"70 bpm"
               },
               {
                   "answerletter":"b",
-                  "answertext":"69"
+                  "answertext":"69 bpm"
               },
 	      {
                   "answerletter":"c",
-                  "answertext":"30"
+                  "answertext":"30 bpm"
               },
 	      {
                   "answerletter":"d",
-                  "answertext":"84"
+                  "answertext":"84 bpm"
               }
           ]
       },
@@ -228,19 +228,19 @@
           [
               {
                   "answerletter":"a",
-                  "answertext":"99"
+                  "answertext":"99 bpm"
               },
               {
                   "answerletter":"b",
-                  "answertext":"70"
+                  "answertext":"70 bpm"
               },
 	      {
                   "answerletter":"c",
-                  "answertext":"108"
+                  "answertext":"108 bpm"
               },
 	      {
                   "answerletter":"d",
-                  "answertext":"130"
+                  "answertext":"130 bpm"
               }
           ]
       },
@@ -285,19 +285,19 @@
           [
               {
                   "answerletter":"a",
-                  "answertext":"100"
+                  "answertext":"100 bpm"
               },
               {
                   "answerletter":"b",
-                  "answertext":"72"
+                  "answertext":"72 bpm"
               },
 	      {
                   "answerletter":"c",
-                  "answertext":"78"
+                  "answertext":"78 bpm"
               },
 	      {
                   "answerletter":"d",
-                  "answertext":"84"
+                  "answertext":"84 bpm"
               }
           ]
       }

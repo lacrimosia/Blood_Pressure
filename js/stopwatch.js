@@ -77,7 +77,8 @@ $(document).ready(function() {
                     $.APP.td = $.APP.tp - $.APP.t1;
                     
                     // change button value
-                    $('#' + $.APP.dir + '_start').val('Resume');
+                   /*$('#' + $.APP.dir + '_start').val('Paused');*/
+				   $('#' + $.APP.dir + '_start').val('Start');
                     
                     // set state
                     $.APP.state = 'pause';
@@ -214,13 +215,13 @@ $(document).ready(function() {
             $.APP.startTimer('sw');
         });    
 
-        $('#cd_start').click(function() {
+      /*  $('#cd_start').click(function() {
             $.APP.startTimer('cd');
-        });           
+        }); */          
         
-        $('#sw_stop,#cd_stop').click(function() {
+     /*   $('#sw_stop,#cd_stop').click(function() {
             $.APP.stopTimer();
-        });
+        });*/
         
         $('#sw_reset,#cd_reset').click(function() {
             $.APP.resetTimer();
@@ -228,7 +229,9 @@ $(document).ready(function() {
         
         $('#sw_pause,#cd_pause').click( function() {
             $.APP.pauseTimer();
-        });                
+        }); 
+		
+	               
                 
     })(jQuery);
         

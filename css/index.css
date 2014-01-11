@@ -3,7 +3,7 @@
 body{
     margin: 0px;
     padding: 0px;
-    background:#c0c0c2; 
+    background:#e5e5e5; 
     cursor: default;
     font-size: 1em;
     font-family: helvetica, verdana, Arial, sans-serif;
@@ -37,7 +37,8 @@ body{
 	position: absolute;
 	top: 325px;
 	left: 10px;
-	border: thin solid #000;
+	background-color: #f0f0f0;
+	/*border: thin solid #000;*/
 }
 
 /*medical pics divs*/
@@ -109,20 +110,26 @@ body{
 	left: 435px;
 	width: 250px;
 	height: 190px;
-	border: thin solid #000;
+	/*border: thin solid #000;*/
 	z-index: 7;
 	background-color: #ececec;
 }
 
 #counting { 
 	text-align: center;
-	font-size: 1.1em;
+	font-size: 1em;
 	color: #900;
 }
 
+#counting span{
+	font-size: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #202054;
+}
 #counting ol li{
 	color: #202054;
-	font-size: 0.75em;
+	font-size: 1em; 
+	line-height: 18px;
 	z-index: 3;
 	text-align: left;
 	padding: 3px;
@@ -224,15 +231,17 @@ body{
 }
 
 #purple{
-	background-color: #202054;
-	width: 200px;
+	/*background-color: #202054;*/
+	width: 125px;
 	height: 50px;
 	opacity: 1;
 	z-index: 3;
 	position: absolute;
-	top: 20px;
-	left: 199px;
-	border: thin solid #000;
+	top: 140px;
+	left: 170px;
+	color: #202054;
+/*	border: thin solid #000;*/
+	text-align:center;
 }
 
 #unlv{
@@ -333,8 +342,8 @@ body{
 }
 
 #watch-jogging{
-	background-color: none;
-	border: thin solid #000;
+	background-color: #e5e5e5;
+	/*border: thin solid #000;*/
 	width: 680px;
 	height: 75px;
 	position: absolute;
@@ -348,15 +357,22 @@ body{
 }
 
 #timers{
+	/*color:#202054;*/
 	color:#202054; 
-	font-family: 'digital-7_italicitalic', Arial, sans-serif;
-	font-size: 3.3em; 
-	font-weight: bolder;
-	width: 425px;
-	height: 70px;
+	background-color:#e5e5e5;
+/*	background-color:#212021;*/
+/*	background-color: #202054;*/
+	text-align: center; 
+	/*font-family: 'digital-7_italicitalic', Arial, sans-serif;*/
+	font-family: arial;
+	font-size: 3em; 
+/*    font-size: 3.3em; */
+/*	font-weight: bolder;*/
+	width: 360px;
+	height: 55px;
 	position: absolute;
-	top: 8px;
-	left: 30px; 
+	top: 10px;
+	left: 14px; 
 	border: 0;
 }
 
@@ -378,23 +394,27 @@ body{
 	height: 50px;
 	/*border: thin solid #000;*/
 	position: absolute;
-	top: 11px;
+	top: 13px;
 	left: 388px;
 }
 
 #sw_stop, #sw_start, #sw_pause, #sw_reset{
-  width: 65px;
+  width: 90px;
   height: 45px;
-  background: #e0e0e0;
+  background-color:#bababa;
+/*    background-color:#424542;*/
+ /* background: #e0e0e0;
   background-image: -webkit-linear-gradient(top, #e0e0e0, #c7c7c7);
   background-image: -moz-linear-gradient(top, #e0e0e0, #c7c7c7);
   background-image: -ms-linear-gradient(top, #e0e0e0, #c7c7c7);
   background-image: -o-linear-gradient(top, #e0e0e0, #c7c7c7);
-  background-image: linear-gradient(to bottom, #e0e0e0, #c7c7c7);
-  -webkit-border-radius: 7px;
+  background-image: linear-gradient(to bottom, #e0e0e0, #c7c7c7);*/
+ /* -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
-  border-radius: 7px;
+  border-radius: 7px;*/
+  border:none;
   font-family: Arial;
+  /*color: #202054;*/
   color: #202054;
   font-size: 1em;
   padding: 5px;
@@ -404,9 +424,10 @@ body{
 }
 
 #sw_stop:hover, #sw_start:hover, #sw_pause:hover, #sw_reset:hover{
-  width: 65px;
+  width: 90px;
   height: 45px;
-  background: #e0e0e0;
+  background-color: #b4b4b4;
+/*  background: #e0e0e0;
   background-image: -webkit-linear-gradient(top, #e0e0e0, #c7c7c7);
   background-image: -moz-linear-gradient(top, #e0e0e0, #c7c7c7);
   background-image: -ms-linear-gradient(top, #e0e0e0, #c7c7c7);
@@ -414,9 +435,10 @@ body{
   background-image: linear-gradient(to bottom, #e0e0e0, #c7c7c7);
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
-  border-radius: 7px;
+  border-radius: 7px;*/
   font-family: Arial;
-  color: #900;
+    color: #fff;
+/*  color: #900;*/
   font-size: 1em;
   padding: 5px;
   text-decoration: none;
@@ -424,6 +446,19 @@ body{
   display: inline-block;
 }
 
+
+#oe_logo{
+	position:absolute;
+	top: 600px;
+	left: 205px;
+	width: 275px;
+	height: 52px;
+	border: none;
+}
+
+#oe_logo a{
+	border: none;	
+}
 
 #hand-jogging{
 	position: relative;
@@ -456,9 +491,10 @@ body{
 }
 
 .header {
-	background-color: #ddd;
+	background-color:#f5f5f5;
+/*		background-color: #ddd;*/
 	height: 20px;
-	width: auto;
+	width: 705px;
 	padding: 0px;
 	margin: 0;
 	border: none;
@@ -471,7 +507,7 @@ body{
 	height:20px;
 	padding: 0px;
 	font-size: 1.2em;
-	font-weight:bold;
+/*	font-weight:bold;*/
 	color: #202054;
 }
 
@@ -521,12 +557,16 @@ body{
 	top: 5px;
 	left: 5px;
 	background-color: #fff;
-	border: thin solid #202054;
+	/*border: thin solid #202054;*/
 	padding: 0px;
-	-moz-box-shadow: #8b8b8d 4px 4px 4px;
+/*	-moz-box-shadow: #8b8b8d 4px 4px 4px;
 	-webkit-box-shadow: #8b8b8d 4px 4px 4px;
 	-o-box-shadow: #8b8b8d 4px 4px 4px;
-	box-shadow: #8b8b8d 4px 4px 4px;
+	box-shadow: #8b8b8d 4px 4px 4px;*/
+	-moz-box-shadow: #c4c2c2 4px 4px 4px;
+	-webkit-box-shadow: #c4c2c2 4px 4px 4px;
+	-o-box-shadow: #c4c2c2 4px 4px 4px;
+	box-shadow: #c4c2c2 4px 4px 4px;
 }
 
 #instructions1{
@@ -539,17 +579,21 @@ body{
 	color:#202054;
 }
 
+#instructions1 ol{
+	line-height: 30px;
+}
+
 #begin{
 	float: right; 
-	background-image:url(../images/begin.png);
-	width: 105px;
-	height: 31px;
+	background-image:url(../images/begin3.jpg);
+	width: 80px;
+	height: 33px;
 }
 
 #begin:hover{
-	background-image:url(../images/begin2.png);
-	width: 105px;
-	height: 31px;
+	background-image:url(../images/begin3hover.jpg);
+	width: 80px;
+	height: 33px;
 }
 
 /*bottom links buttons for awrap */
@@ -746,7 +790,8 @@ img.bg {
     height: 650px;
     margin: 0px auto; 
     padding: 5px;  
-	background-color: #c0c0c2;
+	background-color: #e5e5e5;
+/*		background-color: #c0c0c2;*/
 	background-repeat: repeat;
 }
 /*img
@@ -767,7 +812,7 @@ img.bg {
 }
 .q  {
    font-size: 1.2em;
-   font-weight: bold;
+/*   font-weight: bold;*/
    margin: 10px;
    color: #202054;
 }
@@ -832,8 +877,8 @@ a:hover {
 	top: 25px; 
 	left: 10px;
 	font-weight: bold;
-	background-color:#FFF;
-	border: thin solid #000; 
+	background-color:#f5f5f5;
+/*	border: thin solid #000; */
 	overflow: scroll;
 }
 #resultKeeper div {
