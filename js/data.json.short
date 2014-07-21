@@ -1,0 +1,79 @@
+{ "quiztitle": "Blood Pressure and Radial Pulse",
+  "bpinstructiontext":"Click on bulb until pressure is around 180.",
+  "bpinstructionsairreleasetext":"Click on <span class='red'>red button</span> to let air out.",
+  "bpmaxpressure":"180",
+  "quizcode": [
+      {
+          "points":"51",
+          "code":"9003"
+      },
+      {
+          "points":"50",
+          "code":"0269"
+      }
+  ],
+  "responsetext": "Your <span class='codes'>quiz code is: CODE</span>.",
+  "secretcode": "my secret code",
+  "questions":
+  [
+      {
+          "question":"What is the blood pressure immediately after jogging?",
+          "instructions":"Click bulb to take blood pressure",
+          "questiontype":"radio",
+          "answerkey":"c",
+	  "pressuretype":"bp",
+          "systolic":"150",
+          "diastolic":"78",
+          "bpm":"160",
+	  "positiontype":"jogging",
+	  "picturetype": "jogging",
+          "answers":
+          [
+              {
+                  "answerletter":"a",
+                  "answertext":"165/60"
+              },
+              {
+                  "answerletter":"b",
+                  "answertext":"160/85"
+              },
+              {
+                  "answerletter":"c",
+                  "answertext":"150/78"
+              },
+	      {
+                  "answerletter":"d",
+                  "answertext":"140/66"
+              }
+          ]
+      },
+      {
+          "question":"What is the pulse while immediately after jogging?",
+          "questiontype":"radio",
+          "answerkey":"a",
+	  "pressuretype":"bp",
+	  "positiontype":"jogging", 
+	  "radialtype":"jogging",
+          "bpm":"160",
+          "answers":
+          [
+              {
+                  "answerletter":"a",
+                  "answertext":"160 bpm"
+              },
+              {
+                  "answerletter":"b",
+                  "answertext":"150 bpm"
+              },
+	      {
+                  "answerletter":"c",
+                  "answertext":"170 bpm"
+              },
+	      {
+                  "answerletter":"d",
+                  "answertext":"180 bpm"
+              }
+          ]
+      }      
+  ]
+}

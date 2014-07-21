@@ -1,4 +1,7 @@
 { "quiztitle": "Blood Pressure and Radial Pulse",
+  "bpinstructiontext":"Click on bulb until it stops.",
+  "bpinstructionsairreleasetext":"Click on <span class='red'>red button</span> to let air out.",
+  "bpmaxpressure":"180",
   "quizcode": [
       {
           "points":"51",
@@ -17,56 +20,59 @@
           "question":"What is the blood pressure while jogging?",
           "instructions":"Click bulb to take blood pressure",
           "questiontype":"radio",
-          "answerkey":"b",
+          "answerkey":"c",
 	  "pressuretype":"bp",
+          "systolic":"160",
+          "diastolic":"83",
+          "bpm":"160",
 	  "positiontype":"jogging",
 	  "picturetype": "jogging",
           "answers":
           [
               {
                   "answerletter":"a",
-                  "answertext":"90/60"
+                  "answertext":"165/60"
               },
               {
                   "answerletter":"b",
-                  "answertext":"145/67"
+                  "answertext":"160/85"
               },
               {
                   "answerletter":"c",
-                  "answertext":"127/58"
+                  "answertext":"150/78"
               },
 	      {
                   "answerletter":"d",
-                  "answertext":"144/66"
+                  "answertext":"135/66"
               }
           ]
       },
       {
-          "question":"What is the Pulse while jogging?",
+          "question":"What is the pulse while jogging?",
           "questiontype":"radio",
           "answerkey":"a",
 	  "pressuretype":"radial",
 	  "positiontype":"jogging", 
 	  "radialtype":"jogging",
-	  "timing": "15",
-	  "duration": "17000",
+          "bpm":"160",
+		  "FFbpm": "1500",
           "answers":
           [
               {
                   "answerletter":"a",
-                  "answertext":"128 bpm"
+                  "answertext":"160 bpm"
               },
               {
                   "answerletter":"b",
-                  "answertext":"92 bpm"
+                  "answertext":"150 bpm"
               },
 	      {
                   "answerletter":"c",
-                  "answertext":"80 bpm"
+                  "answertext":"170 bpm"
               },
 	      {
                   "answerletter":"d",
-                  "answertext":"110 bpm"
+                  "answertext":"180 bpm"
               }
           ]
       },
@@ -76,13 +82,15 @@
           "questiontype":"radio",
           "answerkey":"d",
 	  "pressuretype":"bp",
+          "systolic":"110",
+          "diastolic":"70",
+          "bpm":"75",
 	  "positiontype":"standing",
-	  "speed": "2000",
           "answers":
           [
               {
                   "answerletter":"a",
-                  "answertext":"100/82"
+                  "answertext":"110/82"
               },
               {
                   "answerletter":"b",
@@ -94,33 +102,33 @@
               },
 	      {
                   "answerletter":"d",
-                  "answertext":"100/69"
+                  "answertext":"100/65"
               }
           ]
       },
 	  {
 	  
-	  "question":"What is the Pulse while standing?",
+	  "question":"What is the pulse while standing?",
           "questiontype":"radio",
           "answerkey":"a",
 	  "pressuretype":"radial",
 	  "positiontype":"standing",
 	  "radialtype":"standing",
-	  "timing": "8",
-	  "duration": "19000",
+          "bpm":"75",
+		  "FFbpm": "150",
           "answers":
           [
               {
                   "answerletter":"a",
-                  "answertext":"88 bpm"
+                  "answertext":"75 bpm"
               },
               {
                   "answerletter":"b",
-                  "answertext":"52 bpm"
+                  "answertext":"85 bpm"
               },
 	      {
                   "answerletter":"c",
-                  "answertext":"99 bpm"
+                  "answertext":"100 bpm"
               },
 	      {
                   "answerletter":"d",
@@ -134,8 +142,10 @@
           "questiontype":"radio",
           "answerkey":"b",
 	  "pressuretype":"bp",
+          "systolic":"118",
+          "diastolic":"75",
+          "bpm":"70",
 	  "positiontype":"seated",
-	  "speed": "6000",
           "answers":
           [
               {
@@ -148,11 +158,11 @@
               },
 	      {
                   "answerletter":"c",
-                  "answertext":"88/59"
+                  "answertext":"98/59"
               },
 	      {
                   "answerletter":"d",
-                  "answertext":"101/72"
+                  "answertext":"116/72"
               }
           ]
       },
@@ -164,36 +174,38 @@
 	  "pressuretype":"radial",
 	  "positiontype":"seated",
 	  "radialtype":"seated",
-	  "timing": "11",
-	  "duration": "17000",
+          "bpm":"70",
+		  "FFbpm": "140",
           "answers":
           [
               {
                   "answerletter":"a",
-                  "answertext":"70 bpm"
+                  "answertext":"80 bpm"
               },
               {
                   "answerletter":"b",
-                  "answertext":"69 bpm"
+                  "answertext":"79 bpm"
               },
 	      {
                   "answerletter":"c",
-                  "answertext":"30 bpm"
+                  "answertext":"60 bpm"
               },
 	      {
                   "answerletter":"d",
-                  "answertext":"84 bpm"
+                  "answertext":"70 bpm"
               }
           ]
       },
 	  {
 	  
-	  "question":"What is the blood pressure post-jogging?",
+	  "question":"What is the blood pressure five minutes post-jogging?",
           "questiontype":"radio",
           "answerkey":"b",
 	  "pressuretype":"bp",
+          "systolic":"128",
+          "diastolic":"77",
+          "bpm":"90",
 	  "positiontype":"post-jogging",
-	  "speed": "1000",
           "answers":
           [
               {
@@ -202,7 +214,7 @@
               },
               {
                   "answerletter":"b",
-                  "answertext":"109/70"
+                  "answertext":"118/72"
               },
 	      {
                   "answerletter":"c",
@@ -216,14 +228,14 @@
       },
 	  {
 	  
-	  "question":"What is the pulse post-jogging?",
+	  "question":"What is the pulse five minutes post-jogging?",
           "questiontype":"radio",
           "answerkey":"c",
 	  "pressuretype":"radial",
 	  "positiontype":"post-jogging",
 	  "radialtype":"Post-Jogging",
-	 "timing": "15",
-	  "duration": "17000",
+          "bpm":"88",
+		  "FFbpm": "176",
           "answers":
           [
               {
@@ -236,7 +248,7 @@
               },
 	      {
                   "answerletter":"c",
-                  "answertext":"108 bpm"
+                  "answertext":"90 bpm"
               },
 	      {
                   "answerletter":"d",
@@ -250,12 +262,15 @@
           "questiontype":"radio",
           "answerkey":"a",
 	  "pressuretype":"bp",
+          "systolic":"122",
+          "diastolic":"77",
+          "bpm":"65",
 	  "positiontype":"laying-down",
           "answers":
           [
               {
                   "answerletter":"a",
-                  "answertext":"112/71"
+                  "answertext":"112/72"
               },
               {
                   "answerletter":"b",
@@ -279,8 +294,8 @@
 	  "pressuretype":"radial",
 	  "positiontype":"laying-down",
 	  "radialtype":"laying-down",
-	  "timing": "18",
-	  "duration": "19000",
+          "bpm":"63",
+		  "FFbpm":"126",
           "answers":
           [
               {
@@ -289,7 +304,7 @@
               },
               {
                   "answerletter":"b",
-                  "answertext":"72 bpm"
+                  "answertext":"74 bpm"
               },
 	      {
                   "answerletter":"c",
@@ -297,7 +312,7 @@
               },
 	      {
                   "answerletter":"d",
-                  "answertext":"84 bpm"
+                  "answertext":"65 bpm"
               }
           ]
       }

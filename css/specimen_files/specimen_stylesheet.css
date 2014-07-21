@@ -16,7 +16,7 @@ caption, tbody, tfoot, thead, tr, th, td
                   font-size: 100%;vertical-align: baseline;
                   background: transparent;}
 body              {line-height: 1;}
-ol, ul            {list-style: none;}
+ol, ul            {list-style: none;} 
 blockquote, q     {quotes: none;}
 blockquote:before, blockquote:after,
 q:before, q:after {content: '';	content: none;}

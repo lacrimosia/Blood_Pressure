@@ -1,0 +1,327 @@
+﻿body{
+    margin: 0px;
+    padding: 0px;
+    background: #000; 12 8
+    cursor: default;
+    font-size: 1em;
+    font-family: helvetica, verdana, Arial, sans-serif;
+}
+
+.header {
+	background-image:url(../../../../../WLC/WLC311_DArteaga/DevTasks/games/module2/quiz/image/Header.jpg);
+	height: 218px;
+	width: auto;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+.codes {
+	font-weight: bold;
+	font-size:18px;
+}
+
+.pic1 {
+	float: right;
+	padding-top: 15px;
+	padding-right: 1%;
+	padding-bottom: 10px;
+	border: 0px;
+}
+  
+.footer {
+	height: 221px;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	background-image:url(../../../../../WLC/WLC311_DArteaga/DevTasks/games/module2/quiz/image/Footer.jpg);
+}
+
+img.bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+    
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+    
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 1024px){
+    img.bg {
+	left: 50%;
+	margin-left: -512px; }
+}
+#page-wrap { 
+    position: relative; 
+   /* width: 100%; */
+    height: auto;
+    margin: 0px auto; 
+    padding: 20px; 
+    /*background: red;*/
+    -moz-box-shadow: 0 0 20px black; 
+    -webkit-box-shadow: 0 0 20px black; 
+    box-shadow: 0 0 20px black; 
+	background-image:url(../../../../../WLC/WLC311_DArteaga/DevTasks/games/module2/quiz/image/QuestionBkg.jpg);
+}
+/*img
+{
+    border: 5px solid #fff;
+    margin: 10px;
+}*/
+.questionContainer {
+    width: auto;
+    padding: 3px;
+    margin-left:auto;
+    margin-right:3%;
+}
+.qnumber  {
+   font-size: 0.8em;
+   font-weight: normal;
+   margin: 10px;
+}
+.q  {
+   font-size: 1.2em;
+   font-weight: bold;
+   margin: 10px;
+}
+
+ul {
+    margin: 0px;
+    padding: 5px;
+}
+ul li {
+    list-style: none;
+}
+a:hover {
+    background: none;
+}
+.btnRestart {
+    width: 96%;
+    margin: 10px 10px 10px 25px;
+    padding:20px 50px;
+    font-size: 15px;
+    padding: 4px;
+    font-weight: bold;
+    color: green;
+}
+.btnContainer {
+    width: 96%;
+    /*margin: 10px 0px 10px 2%;*/
+	margin-left: 15px;
+	margin-top:10px;
+	margin-bottom: 10px;
+}
+#progressKeeper {
+    width: 40%;
+    height: 5px;
+    border: 3px double #ffffff;
+    margin: 0px 10px;
+    margin-left: 30px;
+    padding: 3px;
+}
+.txtStatusBar {
+    width: 40%;
+    margin: 5px 10px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+#progress {
+    background: #aa1900;
+    width: 0;
+    height: 5px;
+}
+.radius {
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+#resultKeeper {
+    width: 80%;
+    margin: 10px;
+    padding: 3px;
+    margin-top: 50px;
+	margin-left:25px;
+    margin-right:auto;
+	font-weight: bold;
+}
+#resultKeeper div {
+    line-height: 20px;
+}
+#totalScore {
+    font-weight: bold;
+	padding-botom: 50px;
+	font-size:18px;
+}
+input {
+    position: relative;
+
+}
+h1 {
+    /*border-bottom: 1px solid #ffffff;*/
+    font-weight: bold;
+    font-size: 1.7em;
+    height: 22px;
+    margin: 25px;
+    text-indent: 0px;
+}
+
+
+h2 {
+    font-size: .9em;
+    height: 22px;
+    margin: 10px;
+    text-indent: 5px;
+}
+label  {
+   font-size: 1em;
+   font-weight: normal;
+   margin: 10px;
+   position: bottom;
+}
+.prev {
+    float: left;
+	margin-right: 10px;
+    /*text-decoration: none; font: menu;
+    display: inline-block; padding: 2px 8px;
+    background: ButtonFace; color: ButtonText;
+    border-style: solid; border-width: 2px;
+    border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;
+	background-image:url(../image/PreviousBtn.png);
+	width: 74px;
+	height: 35px;*/
+}
+.next {
+    margin-left: 0px;
+    float: left;
+    /*text-decoration: none; font: menu;*/
+    /*display: inline-block; padding: 2px 8px;*/
+    /*background: ButtonFace; color: ButtonText;*/
+    /*border-style: solid; border-width: 2px;*/
+    /*border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;*/
+	/*background-image:url(../image/NextBtn.png);
+	width: 74px;
+	height: 35px;*/
+}
+
+.btnNext {
+border: 0px;
+margin: 0px;
+/*display: block;
+width: 74;
+height: 35;
+background: url(../image/NextBtn2.png) left;*/
+}
+
+.btnNext:hover img {
+background-color: #F2A93A
+/*background-image: url(../image/5.jpg)*/
+}
+	
+
+.btnPrev {
+border: 0px;
+margin: 0px;
+}
+
+.btnPrev:hover img {
+background-color: #F2A93A
+/*background-image: url(../image/5.jpg)*/
+}
+
+
+.lastslide {
+    margin-left: 0px;
+    float: left;
+    /*text-decoration: none; font: menu;
+    display: inline-block; padding: 2px 8px;
+    background: ButtonFace; color: ButtonText;
+    border-style: solid; border-width: 2px;
+    border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;*/
+}
+
+.lastslide:hover img {
+background-color: #F2A93A
+}
+
+#restart {
+    width: 10%;
+    float: left;
+	margin-top: 10px;
+	margin-bottom: 20px;
+    /*color: green;
+    margin-left: 10px;
+    float: left;
+    text-decoration: none; font: menu;
+    display: inline-block; padding: 2px 8px;
+    background: ButtonFace; color: ButtonText;
+    border-style: solid; border-width: 2px;
+    border-color: ButtonHighlight ButtonShadow ButtonShadow ButtonHighlight;*/
+         }
+		 
+#restart:hover img {
+	background-color: #F2A93A
+}
+
+.clear { clear: both; }
+.hide { display: none; }
+.floatLeft {
+	width: 100%;
+	float:left;
+	margin:10px;
+	padding:5px;
+}
+
+#responsetext {
+	margin-left: 25px;
+}
+
+#totalScore {
+	margin-left: 25px;
+	margin-bottom: 10px;
+}
+
+/* TODO: added by speeves */
+#errormsg {
+    margin-left: 30px;
+    color: red;
+	text-align: left;
+	text-align-last:left;
+}
+.correct {
+    margin-left: 50px;
+    color: green;
+}
+.incorrect {
+    margin-left: 40px;
+    color: red;
+}
+
+.feedbackanswer {
+    /*font-style:italic;*/
+    margin-left: 0px;
+	color: #666;
+	font-variant:small-caps;
+	
+	}
+a.startlink{
+    text-decoration: none;
+    color: black;
+}
+#blockDiv {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+}
+.i {
+	font-style:italic;
+}

@@ -210,29 +210,6 @@ $(document).ready(function() {
             }    
         
         });
-          
-        $('#sw_start').click( function() {
-            $.APP.startTimer('sw');
-        });    
-
-      /*  $('#cd_start').click(function() {
-            $.APP.startTimer('cd');
-        }); */          
-        
-     /*   $('#sw_stop,#cd_stop').click(function() {
-            $.APP.stopTimer();
-        });*/
-        
-        $('#sw_reset,#cd_reset').click(function() {
-            $.APP.resetTimer();
-        });  
-        
-        $('#sw_pause,#cd_pause').click( function() {
-            $.APP.pauseTimer();
-        }); 
-		
-	               
-                
     })(jQuery);
         
 });

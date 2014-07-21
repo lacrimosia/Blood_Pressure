@@ -2,45 +2,40 @@
 <html>
   <meta charset="utf-8" />
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><span class="quiztitle"></span></title>
-    
     <!-- load in digital 7 font for the display -->
     <link rel="stylesheet" href="./css/stylesheet.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" href="./css/specimen_files/specimen_stylesheet.css" type="text/css" charset="utf-8" />
-    
-    
-    <link rel="Stylesheet" type="text/css" href="css/index.css" />
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <!--<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>-->
-    <script src="js/raphael.js"></script>
-    <script src="js/buzz.js"></script>
-<script src="js/stopwatch.js"></script>
-    <script src="js/jQueryRotate.js"></script>
-    <script type="text/javascript" src="js/documentready.js"></script>
-    <script type="text/javascript" src="js/jquery.eventreport.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/jwerty.js"></script>
-
     <!--css-->
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
-    <link rel="stylesheet" href="../css/index2.css"/>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
     <link rel="stylesheet" href="css/table.css"/>
+    <link rel="Stylesheet" type="text/css" href="css/index.css" />
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> 
+    <script src="js/raphael.js"></script>
+    <script src="js/buzz.min.js"></script>
+    <script src="js/stopwatch.js"></script>
+    <script type="text/javascript" src="js/documentready.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script src="js/mykeys.js"></script>
+
   </head>
 
   <body>
-	
+    
     <div id="trans"></div>
     <div id="blockDiv" class="hide"></div>
     <div class="header">
       <!--Header Image Right-->
       <div id="bio">Blood Pressure and Radial Pulse </div>
       <!--bottom links-->
-            <div id="links-bottom">
-    	      <div id="bottom-buttons"><a href="#" id="exit"><img src="images/exit.png"/></a> 
-              <a href="#" id="mute"><img src="images/mute-off.png" id="mu"/></a>
-              </div>
-            </div> <!--end bottom links-->
+      <div id="links-bottom">
+    	<div id="bottom-buttons"><a href="#" id="exit"><img src="images/exit.png"/></a> 
+          <a href="#" id="mute"><img src="images/mute-off.png" id="mu"/></a>
+        </div>
+      </div> <!--end bottom links-->
     </div>
 
     <!--<img src="image/Header.jpg" class="bg">-->
@@ -64,11 +59,36 @@
 	    <div id="imagecontainer">
               <div id="positionimages"><!--start jogging-->
                 <div id="instructions-bpjog"></div>
-    	        <div id="jogging" class="hide bodyPosition"><img src="images/jogging.jpg" id="jogging1"/><div id="heartbeat-jog" class="heartbeat-jog hearts"><img src="images/heart.png"/></div></div>
-                <div id="seated" class="hide bodyPosition"><img src="images/sitting.jpg" id="seated1"/><div id="heartbeat-sit" class="heartbeat-sit hearts"><img src="images/heart.png"/></div></div>
-                <div id="standing" class="hide bodyPosition"><img src="images/standing.jpg" id="standing1"/><div id="heartbeat-stand" class="heartbeat-stand hearts"><img src="images/heart.png"/></div></div>
-                <div id="post-jogging" class="hide bodyPosition"><img src="images/post-jogging.jpg" id="post1"/><div id="heartbeat-post" class="heartbeat-post hearts"><img src="images/heart.png"/></div></div>
-                <div id="laying-down" class="hide bodyPosition"><img src="images/laying-down.jpg" id="lay"/><div id="heartbeat-lay" class="heartbeat-laying2 hearts"><img src="images/heart.png"/></div></div>
+    	        <div id="jogging" class="hide bodyPosition">
+                  <img src="images/jogging.jpg" id="jogging1"/>
+                  <div id="heartbeat-jogging" class="heartbeat-jog hearts">
+                    <img src="images/heart.png"/>
+                  </div>
+                </div>
+                <div id="seated" class="hide bodyPosition">
+                  <img src="images/sitting.jpg" id="seated1"/>
+                  <div id="heartbeat-seated" class="heartbeat-sit hearts">
+                    <img src="images/heart.png"/>
+                  </div>
+                </div>
+                <div id="standing" class="hide bodyPosition">
+                  <img src="images/standing.jpg" id="standing1"/>
+                  <div id="heartbeat-standing" class="heartbeat-stand hearts">
+                    <img src="images/heart.png"/>
+                  </div>
+                </div>
+                <div id="post-jogging" class="hide bodyPosition">
+                  <img src="images/post-jogging.jpg" id="post1"/>
+                  <div id="heartbeat-post-jogging" class="heartbeat-post hearts">
+                    <img src="images/heart.png"/>
+                  </div>
+                </div>
+                <div id="laying-down" class="hide bodyPosition">
+                  <img src="images/laying-down.jpg" id="lay"/>
+                  <div id="heartbeat-laying-down" class="heartbeat-laying2 hearts">
+                    <img src="images/heart.png"/>
+                  </div>
+                </div>
               </div>
               <!--- radial/bp images --->
               
@@ -76,89 +96,93 @@
                 <div id="bp" class="hide">
                   <div id="cuff"><img src="images/background.jpg"></div>
                   <div id="air"><img src="images/air.png"></div>
-                  <!--<div id="needle-jog" ><!--<img id="needle-image" src="images/needle-image.png" class="needle"></div>-->
-                  <div id="needlebox"><div id="rsr"></div></div>
-                  <div id="regular-jog"><img src="images/regular.png"></div>
-                  <div id="squeeze-jog"><img src="images/squeezed.png"></div> 
-                </div><!--end bp-->
-                
-                <!--hand and stopwatch-->
-                <div id="radial" class="hide"><!--Jogging pulse-->
-                  <div id="hand-jogging"><img src="images/hand.jpg"></div>
-                  <div id="counting"><span>Instructions</span><br><br>
-                  	<ol>
-                    	<li>Click the <b>"Start/Pause"</b> button to start and pause the stopwatch.</li>
-                        <li>To Clear time, click the <b>"Reset"</b> button.</li>
-                        <li><b>Exercise can be repeated.</b></li>
-                    </ol>
-                  </div>
-                  <!--<div id="beats">Beats in 15sec</div>-->
+                  <div id="air-overlay"></div>
+                    <div id="needlebox"><div id="rsr"></div></div>
+                    <div id="bulb"><img src="images/regular.png"></div>
+                    <div id="bulb-overlay"></div>
+                    <div id="bulb-squeeze"><img src="images/squeezed.png"></div> 
+                  </div><!--end bp-->
                   
-                  <!--stopwatch-->
-                  <div id="watch-jogging">
-                    <form name="clockform" id="watchgroup">
-                    	<!--<input name="clock" value="00:00:00.00" id="clockwords" readonly>-->
-                        <!--<input type="text" name="stwa"  id="clockwords" readonly value="00 : 00 : 00">-->
-                        <div id="timers">
-                        <span id="sw_h">00</span>&nbsp;:
-    					<span id="sw_m">00</span>&nbsp;:
-    					<span id="sw_s">00</span>&nbsp;:
-    					<span id="sw_ms">00</span>
+                  <!--hand and stopwatch-->
+                  <div id="radial" class="hide"><!--Jogging pulse-->
+                    <div id="hand-jogging"><img src="images/hand.jpg"></div>
+                    <div id="counting"><span>Instructions</span><br><br>
+                      <ul>
+                    	<li>Click <b>"Start"</b> button to begin.</li>
+                        <li>Click <b>"Reset"</b> button to restart.</li>
+                      </ul>
+                      <div class="tips">
+                        <br />
+                        <p>Tips:</p>
+                        <ul class="tips">
+             	          <li>Count beats for 15 seconds.</li>
+                          <li>Multiply your count by 4.</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!--stopwatch-->
+                    <div id="watch-jogging">
+                      <form name="clockform" id="watchgroup">
+                       <div id="timers">
+                          <span id="sw_h">00</span>&nbsp;:
+    			  <span id="sw_m">00</span>&nbsp;:
+    			  <span id="sw_s">00</span>&nbsp;:
+    			  <span id="sw_ms">00</span>
                         </div>
                         
-                        	<div id="watchbox"> 
-                            
-                            <input type="button" value="Start" id="sw_start" />
-   							 <input type="button" value="Pause" id="sw_pause" />
-    						<!--<input type="button" value="Stop"  id="sw_stop" />-->
-    						<input type="button" value="Reset" id="sw_reset" />
-                    			<!--<input name="clearer" type="button" value="Reset" onclick="clearALL()" id="reset2">-->
-                    			<!--<input name="starter" type="button" id="start" value="Start/Pause">-->
-                               <!--	<input name="starter" type="button" id="start" value="Start/Pause" onclick="findTIME()">-->
-                            <!--<input type="button" name="theButton" id="start" onClick="stopwatch(this.value);" value="Start" /><input type="button" name="stop" id="stop"  value="Stop" onClick="stopTheClock(this.value);"/>
-       							<input type="button" value="Clear" id="reset2" onClick="resetIt();reset();" />-->
-                                
-                              <!--  <input type="button" name="theButton" id="start" value="Start" onClick="doTimer()"/>
-                                <input type="button" name="stop" id="stop"  value="Stop" onClick="stopCount()"/>
-       							<input type="button" value="Clear" id="reset2" onClick="resetCount()"/>-->
-                           </div>						
-                    </form>	
-                  </div>
-                  <!--end stopwatch-->
+                        <div id="watchbox"> 
+                          <input type="button" value="Start" id="sw_start" />
+    			  <input type="button" value="Reset" id="sw_reset" />
+                        </div>						
+                      </form>	
+                    </div>
+                    <!--end stopwatch-->
+                    
+                    
+                    <div id="radial-heartbeat-dot"></div>
+                    
+        	  </div><!--end radial-->
+                </div><!--spy-->   
+	      </div><!--end position images--> 
               
-                  
-                  <div id="heartbeat-jogging"></div>
-                  
-        	</div><!--end radial-->
-              </div><!--spy-->   
-	    </div><!--end position images--> 
-            
-            <!--Purple firections popup-->
-            <div id="purple" class="hide">
-            </div>
-            <!--end purple-->
-            
-            <div id="instructions1"><!--start instructions-->
-              <span><b>Interactive Activity</b></span><br><br>
-              <ol>
-                <li>For each scenario, you will take the blood pressure and pulse.</li>
-                <li>Then you will select an answer.</li>
-             	<li>At the end of the activity, you will receive a score out of 100%.</li>
-              </ol>
-           
-
-	      <p><div id="begin"></div></p>
-            </div><!--end instructions-->
-            
-            
-            <!--Where Questions will display-->
-            <div id="questions-div" class="hide">
-              <div id="main"><!--hidden until changes are made-->
-            	<div id="errormsg"></div>
-		<!--The Actual Questions--><div id="content"></div><!--end Content-->
-  	      </div><!--end main div-->
-            </div>
-            <!--End Questions div-->
+              <!--Purple directions popup-->
+              <div id="purple-instructions" class="hide">&nbsp;</div>
+              <!--end purple-->
+              
+              <div id="instructions"><!--start instructions-->
+                <span id="welcometitle">Blood Pressure and Radial Pulse</span><br /><br />
+                <p>In this activity, you will be provided with an opportunity to take<br /> 
+                   the blood pressure and radial pulse of a person in various states of exertion.</p>
+                   <br />
+                   <p><strong>Each test will provide you with:</strong></p><br />
+                   <ul>
+                     <li>a stopwatch, or sphygmomanometer</li>
+                     <li>visual and aural queues to help monitor heartrate, and systolic/diastolic pressure</li>
+                     <li>a multiple choice question to record your results</li>
+                   </ul>
+                   <br />
+                   <p><strong>Recommendations:</strong></p><br />
+                   <ul>
+				     <li>It is strongly recommended to complete this activity in Chrome.</li>
+                     <li>Record your preliminary results on a sheet of paper.</li>
+                     <li>Choose the closest possible answer from the list.</li>
+             	     <li>When taking the heartrate, use pencil and paper to mark each beat for 15 seconds.</li>
+                     <li>Don't forget to multiply your heartrate by four. (beats in fifteen seconds)*4</li>
+                   </ul>
+                
+                <br /><br />
+	        <p><div id="begin"></div></p>
+              </div><!--end instructions-->
+              
+              
+              <!--Where Questions will display-->
+              <div id="questions-div" class="hide">
+                <div id="main"><!--hidden until changes are made-->
+            	  <div id="errormsg"></div>
+		  <!--The Actual Questions--><div id="content"></div><!--end Content-->
+  	        </div><!--end main div-->
+              </div>
+              <!--End Questions div-->
 
             </div><!--end instructions2-->  
 
@@ -189,7 +213,7 @@
               <div class="btnContainer">
                 <div class="prev hide"><a class="btnPrev" href="#"><img src="images/PreviousBtn.png" alt="Previous Button"/></a></div>
                 <div class="next hide"><a class="btnNext" href="#"><img src="images/go.jpg" alt="Next Button"/></a></div>
-<!--                <div class="next hide"><a class="btnNext" href="#"><img src="images/NextBtn.png" alt="Next Button"/></a></div>-->
+                <!--                <div class="next hide"><a class="btnNext" href="#"><img src="images/NextBtn.png" alt="Next Button"/></a></div>-->
                 <div class="lastslide hide"><a class="btnShowResult" href="#"><img src="images/finish.jpg" alt="Finish Button"/></a></div>
                 <br />
               </div>
@@ -201,7 +225,7 @@
           <li>
             <label>
               <input type="QUESTIONTYPE" name="qQUESTIONNUM" id="qQUESTIONNUM-ANSWERLETTER">
-                ANSWERLETTER) ANSWERTEXT
+              ANSWERLETTER) ANSWERTEXT
               </input>
             </label>
           </li>
